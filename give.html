@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Give & Tithe - JCC Bethel City</title>
+  <meta name="description" content="Support the mission of JCC Bethel City. Give online, via M-Pesa, or at church. Your generosity transforms lives.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <!-- NAVBAR -->
+  <nav class="navbar" role="navigation" aria-label="Main Navigation">
+    <div class="navbar-brand">
+      <img src="images/logo.png" alt="JCC Bethel City Logo" class="navbar-brand-logo">
+      <span class="navbar-brand-text">JCC Bethel City</span>
+    </div>
+    <ul class="navbar-links">
+      <li><a href="home.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="ministries.html">Ministries</a></li>
+      <li><a href="sermons.html">Sermons</a></li>
+      <li><a href="events.html">Events</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="give.html" aria-current="page" class="navbar-cta">Give</a></li>
+    </ul>
+    <button class="navbar-toggle" aria-label="Toggle Menu" aria-expanded="false">
+      <span class="hamburger-icon">☰</span>
+      <span class="close-icon" style="display:none;">✕</span>
+    </button>
+    <div class="navbar-mobile-menu" role="navigation" aria-label="Mobile Navigation">
+      <div class="mobile-menu-header">
+        <span class="mobile-menu-title">Menu</span>
+        <button class="mobile-menu-close" aria-label="Close Menu">✕</button>
+      </div>
+      <a href="home.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="ministries.html">Ministries</a>
+      <a href="sermons.html">Sermons</a>
+      <a href="events.html">Events</a>
+      <a href="contact.html">Contact</a>
+      <a href="give.html">Give</a>
+    </div>
+  </nav>
+
+  <!-- STICKY GIVE BUTTON -->
+  <a href="#give-options" class="sticky-give-btn" aria-label="Give Now">
+    <i class="fas fa-heart"></i> <span>Give Now</span>
+  </a>
+
+  <!-- BACK TO TOP BUTTON -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to Top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <!-- BREADCRUMB NAVIGATION -->
+  <div class="breadcrumb">
+    <div class="container">
+      <a href="home.html"><i class="fas fa-home"></i> Home</a>
+      <span class="breadcrumb-separator">/</span>
+      <span class="breadcrumb-current">Give</span>
+      <div class="share-page">
+        <button class="share-btn" onclick="sharePage()" aria-label="Share this page">
+          <i class="fas fa-share-alt"></i> Share
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <main id="main-content">
+    <!-- HERO SECTION - TEXT ONLY -->
+    <section class="section-hero-text" aria-label="Give Hero">
+      <div class="container">
+        <div class="hero-text-only">
+          <p class="hero-subtitle-text animate-float">Honour God With Your Substance</p>
+          <div class="hero-divider"></div>
+          <div class="hero-gold-line"></div>
+          <p class="hero-description-text">Your generosity is an act of worship and an investment in God's kingdom</p>
+        </div>
+      </div>
+      <!-- Scroll Indicator -->
+      <div class="scroll-indicator">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+      </div>
+    </section>
+
+    <!-- GIVING TESTIMONIAL -->
+    <section class="section" style="padding-top: 0;">
+      <div class="container">
+        <div class="giving-testimonial">
+          <i class="fas fa-quote-left"></i>
+          <p>"I started tithing faithfully and saw God's provision overflow in my life. He is faithful to His promise!"</p>
+          <span class="testimonial-author">— Peter M., Member</span>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- WHY GIVE SECTION -->
+    <section class="section" style="padding-top: 0;">
+      <div class="container">
+        <h2 style="text-align: center; margin-bottom: var(--spacing-lg);"><i class="fas fa-heart"></i> Why We Give</h2>
+        <div class="why-give-grid">
+          <div class="why-give-card">
+            <div class="why-give-icon"><i class="fas fa-bible"></i></div>
+            <h4>Biblical Principle</h4>
+            <p>Giving is not an obligation imposed by man—it is a principle revealed by God and embraced by His people.</p>
+            <span class="why-give-scripture">"Bring the whole tithe..." — Malachi 3:10</span>
+          </div>
+          <div class="why-give-card">
+            <div class="why-give-icon"><i class="fas fa-church"></i></div>
+            <h4>Building God's House</h4>
+            <p>Your tithe builds the spiritual and physical infrastructure of JCC Bethel City, enabling us to reach more lives.</p>
+            <span class="why-give-scripture">"Each of you should give what you have decided in your heart." — 2 Corinthians 9:7</span>
+          </div>
+          <div class="why-give-card">
+            <div class="why-give-icon"><i class="fas fa-people-group"></i></div>
+            <h4>Community Impact</h4>
+            <p>Your generosity flows directly into caring for the poor, supporting families, reaching youth, and transforming Athi River.</p>
+            <span class="why-give-scripture">"A generous person will prosper." — Proverbs 11:25</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- SCRIPTURE BANNER -->
+    <section class="scripture-banner" aria-label="Scripture">
+      <p class="scripture-text">"'Bring the whole tithe into the storehouse... and see if I will not throw open the floodgates of heaven and pour out so much blessing that there will not be room enough to store it.'"</p>
+      <p class="scripture-reference">— Malachi 3:10</p>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- GIVING OPTIONS -->
+    <section class="section" id="give-options">
+      <div class="container">
+        <h2 style="text-align: center; margin-bottom: var(--spacing-2xl);"><i class="fas fa-hand-holding-heart"></i> Ways to Give</h2>
+        
+        <!-- Giving Type Toggle -->
+        <div class="giving-toggle">
+          <button class="giving-toggle-btn active" data-type="one-time" onclick="toggleGivingType('one-time')">One-Time</button>
+          <button class="giving-toggle-btn" data-type="monthly" onclick="toggleGivingType('monthly')">Monthly</button>
+        </div>
+
+        <div class="grid-3">
+          <!-- M-Pesa -->
+          <div class="card give-card">
+            <div class="card-icon"><i class="fas fa-mobile-screen"></i></div>
+            <h4 class="card-title">M-Pesa</h4>
+            <p class="card-text" style="margin-bottom: var(--spacing-lg); font-size: 16px;">The quickest and most convenient way to give.</p>
+            <div style="background: rgba(245,197,24,0.1); padding: var(--spacing-md); border-radius: 8px; margin-bottom: var(--spacing-lg);">
+              <p style="font-size: 13px; color: var(--muted-silver); margin-bottom: var(--spacing-sm);">Paybill Number</p>
+              <p style="font-size: 20px; font-weight: 700; color: var(--electric-gold);">588344</p>
+              <p style="font-size: 13px; color: var(--muted-silver); margin-top: var(--spacing-sm); margin-bottom: var(--spacing-sm);">Account Number</p>
+              <p style="font-size: 18px; font-weight: 700; color: var(--electric-gold);">Reason for Giving</p>
+            </div>
+            <a href="https://www.safaricom.co.ke/personal/m-pesa" target="_blank" class="btn btn-secondary btn-sm give-btn" style="width: 100%;">Send Tithe</a>
+          </div>
+
+          <!-- Online Giving -->
+          <div class="card give-card featured-give-card">
+            <div class="card-icon"><i class="fas fa-credit-card"></i></div>
+            <h4 class="card-title">Give Online</h4>
+            <p class="card-text" style="margin-bottom: var(--spacing-lg); font-size: 16px;">Secure online giving via card or mobile money.</p>
+            <div style="background: rgba(245,197,24,0.1); padding: var(--spacing-md); border-radius: 8px; margin-bottom: var(--spacing-lg);">
+              <div style="display: flex; gap: var(--spacing-sm); justify-content: center; flex-wrap: wrap;">
+                <span style="background: rgba(255,255,255,0.05); padding: 4px 12px; border-radius: 4px; font-size: 12px; color: var(--muted-silver);"><i class="fab fa-cc-visa"></i> Visa</span>
+                <span style="background: rgba(255,255,255,0.05); padding: 4px 12px; border-radius: 4px; font-size: 12px; color: var(--muted-silver);"><i class="fab fa-cc-mastercard"></i> Mastercard</span>
+                <span style="background: rgba(255,255,255,0.05); padding: 4px 12px; border-radius: 4px; font-size: 12px; color: var(--muted-silver);"><i class="fas fa-mobile-screen"></i> M-Pesa</span>
+              </div>
+            </div>
+            <button class="btn btn-gold btn-sm give-btn" style="width: 100%;" onclick="openGiveModal()">Give Now</button>
+          </div>
+
+          <!-- Bank Transfer -->
+          <div class="card give-card">
+            <div class="card-icon"><i class="fas fa-building-columns"></i></div>
+            <h4 class="card-title">Bank Transfer</h4>
+            <p class="card-text" style="margin-bottom: var(--spacing-lg); font-size: 16px;">For larger giving or regular standing orders.</p>
+            <div style="background: rgba(245,197,24,0.1); padding: var(--spacing-md); border-radius: 8px; margin-bottom: var(--spacing-lg);">
+              <p style="font-size: 13px; color: var(--muted-silver); margin-bottom: var(--spacing-sm);">Contact the Finance Team</p>
+              <p style="font-size: 14px; color: var(--muted-silver); line-height: 1.6;">We'll provide detailed bank account information for secure transfers.</p>
+            </div>
+            <button class="btn btn-secondary btn-sm" onclick="contactFinance()" style="width: 100%;">Get Details</button>
+          </div>
+        </div>
+
+        <!-- Offering Envelope -->
+        <div class="card offering-envelope" style="max-width: 500px; margin: var(--spacing-2xl) auto 0; text-align: center; border-top: 3px solid var(--electric-gold);">
+          <div class="card-icon"><i class="fas fa-place-of-worship"></i></div>
+          <h4 class="card-title">At Church</h4>
+          <p class="card-text" style="margin-bottom: var(--spacing-lg); font-size: 16px;">Cash or check offerings at Sunday services.</p>
+          <div style="background: rgba(245,197,24,0.1); padding: var(--spacing-md); border-radius: 8px; margin-bottom: var(--spacing-lg);">
+            <p style="font-size: 13px; color: var(--muted-silver); margin-bottom: var(--spacing-sm);">Service Times</p>
+            <p style="font-size: 14px; color: var(--muted-silver); line-height: 1.6;"><strong>Sunday:</strong> 9:00 AM<br>Offering envelopes provided</p>
+          </div>
+          <button class="btn btn-secondary btn-sm" onclick="window.location.href='home.html'" style="width: 100%;">Join Us Sunday</button>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- FUNDRAISING PROJECTS -->
+    <section class="section" style="background: linear-gradient(135deg, rgba(245,197,24,0.05) 0%, transparent 100%);">
+      <div class="container">
+        <h2 style="text-align: center; margin-bottom: var(--spacing-2xl);"><i class="fas fa-bullseye"></i> Current Projects</h2>
+        <div class="fundraising-projects-grid">
+          <!-- Project 1 -->
+          <div class="fundraising-project-card">
+            <div class="project-header">
+              <h4><i class="fas fa-church"></i> Building Fund</h4>
+              <span class="project-goal">Goal: KSh 2,500,000</span>
+            </div>
+            <div class="project-progress">
+              <div class="project-bar" style="width: 68%;">
+                <span class="project-percent">68%</span>
+              </div>
+            </div>
+            <p class="project-text">KSh 1,700,000 raised • Help us reach our goal!</p>
+            <button class="btn btn-secondary btn-sm" onclick="openGiveModal()" style="width: 100%;">Give to Building Fund →</button>
+          </div>
+
+          <!-- Project 2 -->
+          <div class="fundraising-project-card">
+            <div class="project-header">
+              <h4><i class="fas fa-hands-helping"></i> Outreach & Missions</h4>
+              <span class="project-goal">Goal: KSh 1,000,000</span>
+            </div>
+            <div class="project-progress">
+              <div class="project-bar" style="width: 45%;">
+                <span class="project-percent">45%</span>
+              </div>
+            </div>
+            <p class="project-text">KSh 450,000 raised • Help us reach more souls!</p>
+            <button class="btn btn-secondary btn-sm" onclick="openGiveModal()" style="width: 100%;">Give to Missions →</button>
+          </div>
+
+          <!-- Project 3 -->
+          <div class="fundraising-project-card">
+            <div class="project-header">
+              <h4><i class="fas fa-child"></i> Youth & Children</h4>
+              <span class="project-goal">Goal: KSh 500,000</span>
+            </div>
+            <div class="project-progress">
+              <div class="project-bar" style="width: 82%;">
+                <span class="project-percent">82%</span>
+              </div>
+            </div>
+            <p class="project-text">KSh 410,000 raised • Help us reach our goal!</p>
+            <button class="btn btn-secondary btn-sm" onclick="openGiveModal()" style="width: 100%;">Give to Youth Fund →</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- IMPACT NUMBERS -->
+    <section class="section">
+      <div class="container">
+        <h2 style="text-align: center; margin-bottom: var(--spacing-2xl);"><i class="fas fa-chart-line"></i> Your Generosity In Action</h2>
+        <div class="grid-3">
+          <div class="stat-block stat-card impact-card">
+            <i class="fas fa-family" style="font-size: 36px; color: var(--electric-gold); margin-bottom: var(--spacing-md); display: block;"></i>
+            <div class="stat-number">120+</div>
+            <div class="stat-label">Families Supported</div>
+            <p class="stat-description">Through the Welfare Ministry, we have provided food, education assistance, and emergency support.</p>
+          </div>
+          <div class="stat-block stat-card impact-card">
+            <i class="fas fa-person-chalkboard" style="font-size: 36px; color: var(--electric-gold); margin-bottom: var(--spacing-md); display: block;"></i>
+            <div class="stat-number">340+</div>
+            <div class="stat-label">Youth in Programs</div>
+            <p class="stat-description">Young people are encountering Christ, building godly character, and discovering their purpose.</p>
+          </div>
+          <div class="stat-block stat-card impact-card">
+            <i class="fas fa-calendar-alt" style="font-size: 36px; color: var(--electric-gold); margin-bottom: var(--spacing-md); display: block;"></i>
+            <div class="stat-number">10+</div>
+            <div class="stat-label">Years of Ministry</div>
+            <p class="stat-description">A full decade of faithful, uncompromising kingdom work in Athi River.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- STEWARDSHIP & TRANSPARENCY -->
+    <section class="section" style="background: linear-gradient(135deg, rgba(245,197,24,0.05) 0%, transparent 100%);">
+      <div class="container">
+        <h2 style="text-align: center; margin-bottom: var(--spacing-2xl);"><i class="fas fa-shield-alt"></i> Our Stewardship Commitment</h2>
+        <div class="stewardship-grid">
+          <div class="stewardship-card">
+            <div class="stewardship-icon"><i class="fas fa-handshake"></i></div>
+            <h4>We Honor Your Trust</h4>
+            <p>JCC Bethel City operates with complete financial transparency. Every dollar received is accounted for, and stewardship reports are available to our members.</p>
+          </div>
+          <div class="stewardship-card">
+            <div class="stewardship-icon"><i class="fas fa-chart-pie"></i></div>
+            <h4>Giving Breakdown</h4>
+            <div class="stewardship-breakdown">
+              <p><span>Ministry & Outreach:</span> <strong>60%</strong></p>
+              <p><span>Building & Operations:</span> <strong>25%</strong></p>
+              <p><span>Staff & Leadership:</span> <strong>10%</strong></p>
+              <p><span>Missions & Network:</span> <strong>5%</strong></p>
+            </div>
+          </div>
+          <div class="stewardship-card">
+            <div class="stewardship-icon"><i class="fas fa-file-alt"></i></div>
+            <h4>Annual Report</h4>
+            <p>View our latest financial report and see how your generosity is making a difference in the kingdom.</p>
+            <button class="btn btn-secondary btn-sm" onclick="alert('Annual report coming soon!')" style="width: 100%; margin-top: var(--spacing-md);">View Report →</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- GIVING FAQ -->
+    <section class="section">
+      <div class="container">
+        <h2 style="text-align: center; margin-bottom: var(--spacing-2xl);"><i class="fas fa-circle-question"></i> Giving FAQ</h2>
+        <div class="faq-accordion giving-faq">
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleFAQ(this)">
+              <span><i class="fas fa-percent"></i> What is a tithe?</span>
+              <i class="fas fa-chevron-down faq-arrow"></i>
+            </div>
+            <div class="faq-answer">
+              <p>A tithe is 10% of your income, given as an act of worship and obedience to God. It's the biblical foundation of giving that builds the church and reaches the lost.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleFAQ(this)">
+              <span><i class="fas fa-hand-holding-heart"></i> What is an offering?</span>
+              <i class="fas fa-chevron-down faq-arrow"></i>
+            </div>
+            <div class="faq-answer">
+              <p>An offering is giving above and beyond the tithe. It's a way to sow abundantly into special projects, missionary work, or community aid.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleFAQ(this)">
+              <span><i class="fas fa-calendar-alt"></i> Can I set up recurring giving?</span>
+              <i class="fas fa-chevron-down faq-arrow"></i>
+            </div>
+            <div class="faq-answer">
+              <p>Yes! You can set up automatic transfers via M-Pesa standing orders or bank standing orders. Consistency in giving trains your heart and ensures the church can plan ahead.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleFAQ(this)">
+              <span><i class="fas fa-lock"></i> Is my giving secure?</span>
+              <i class="fas fa-chevron-down faq-arrow"></i>
+            </div>
+            <div class="faq-answer">
+              <p>Absolutely. We use secure platforms for all online giving. Your financial information is protected and never shared.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleFAQ(this)">
+              <span><i class="fas fa-receipt"></i> Do I get a receipt for my giving?</span>
+              <i class="fas fa-chevron-down faq-arrow"></i>
+            </div>
+            <div class="faq-answer">
+              <p>Yes, receipts are provided for all giving. Please contact the finance team for any documentation you may need for tax purposes.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleFAQ(this)">
+              <span><i class="fas fa-hands-praying"></i> How can I pray for my offering?</span>
+              <i class="fas fa-chevron-down faq-arrow"></i>
+            </div>
+            <div class="faq-answer">
+              <p>Before you give, pray and ask God to multiply your seed and use it for His glory. Your offering is an act of worship—let it be accompanied by prayer.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- TITHE CALCULATOR -->
+    <section class="section" style="background: linear-gradient(135deg, rgba(245,197,24,0.05) 0%, transparent 100%);">
+      <div class="container">
+        <h2 style="text-align: center; margin-bottom: var(--spacing-lg);"><i class="fas fa-calculator"></i> Tithe Calculator</h2>
+        <p style="text-align: center; color: var(--muted-silver); margin-bottom: var(--spacing-2xl);">Enter your income to see what 10% (the tithe) would be.</p>
+        <div class="tithe-calculator">
+          <div class="calculator-input">
+            <label for="incomeInput">Your Monthly Income (KSh)</label>
+            <div class="input-wrapper">
+              <span class="input-currency">KSh</span>
+              <input type="number" id="incomeInput" placeholder="Enter amount" min="0" step="100" oninput="calculateTithe()">
+            </div>
+          </div>
+          <div class="calculator-result">
+            <p><strong>Your Tithe (10%):</strong> <span id="titheResult">KSh 0.00</span></p>
+            <p class="calculator-note">This is a suggested amount based on biblical principles.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- FINAL CALL TO ACTION -->
+    <section class="section" style="text-align: center;">
+      <div class="container">
+        <h2 style="margin-bottom: var(--spacing-lg);"><i class="fas fa-heart"></i> Start Your Journey of Generosity</h2>
+        <p style="font-size: 18px; color: var(--muted-silver); max-width: 700px; margin: 0 auto var(--spacing-2xl); line-height: 1.8;">Whether you're giving your first tithe or deepening your commitment to kingdom stewardship, we invite you to join thousands of believers who have discovered the joy of sowing into God's kingdom.</p>
+        <div style="display: flex; gap: var(--spacing-lg); justify-content: center; flex-wrap: wrap;">
+          <button class="btn btn-primary btn-lg give-btn" onclick="openGiveModal()">Give Now →</button>
+          <a href="contact.html" class="btn btn-secondary btn-lg">Have Questions?</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SCRIPTURE BANNER 2 -->
+    <section class="scripture-banner" aria-label="Scripture">
+      <p class="scripture-text">"God loves a cheerful giver. And God is able to bless you abundantly, so that in all things at all times, having all that you need, you will abound in every good work."</p>
+      <p class="scripture-reference">— 2 Corinthians 9:7-8</p>
+    </section>
+  </main>
+
+  <!-- GIVE MODAL -->
+  <div class="give-modal" id="giveModal">
+    <div class="give-modal-content">
+      <button class="give-modal-close" onclick="closeGiveModal()">✕</button>
+      <div class="give-modal-header">
+        <i class="fas fa-hand-holding-heart"></i>
+        <h3>Give Online</h3>
+        <p>Select your giving method</p>
+      </div>
+      <div class="give-modal-body">
+        <div class="give-modal-options">
+          <button class="give-modal-option" onclick="selectGiveMethod('M-Pesa')">
+            <i class="fas fa-mobile-screen"></i>
+            <span>M-Pesa</span>
+            <span class="give-modal-option-desc">Paybill 588344</span>
+          </button>
+          <button class="give-modal-option" onclick="selectGiveMethod('Card')">
+            <i class="fas fa-credit-card"></i>
+            <span>Card Payment</span>
+            <span class="give-modal-option-desc">Visa / Mastercard</span>
+          </button>
+          <button class="give-modal-option" onclick="selectGiveMethod('Bank Transfer')">
+            <i class="fas fa-building-columns"></i>
+            <span>Bank Transfer</span>
+            <span class="give-modal-option-desc">Contact finance team</span>
+          </button>
+        </div>
+        <div class="give-modal-amount">
+          <label>Select Amount (KSh)</label>
+          <div class="amount-options">
+            <button class="amount-btn" onclick="selectAmount(1000)">KSh 1,000</button>
+            <button class="amount-btn" onclick="selectAmount(2000)">KSh 2,000</button>
+            <button class="amount-btn" onclick="selectAmount(5000)">KSh 5,000</button>
+            <button class="amount-btn" onclick="selectAmount(10000)">KSh 10,000</button>
+            <button class="amount-btn custom-amount" onclick="customAmount()">Custom</button>
+          </div>
+          <input type="number" id="customAmountInput" placeholder="Enter custom amount" style="display: none; margin-top: var(--spacing-sm); padding: 10px 16px; background: rgba(255,255,255,0.05); border: 1px solid rgba(245,197,24,0.2); border-radius: 8px; color: var(--pure-white); width: 100%;">
+        </div>
+        <button class="btn btn-gold btn-lg" style="width: 100%; margin-top: var(--spacing-lg);" onclick="processGive()">Proceed to Give</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer role="contentinfo">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-column">
+          <h4>JCC Bethel City</h4>
+          <p>Where Heaven Meets Athi River</p>
+          <div class="social-icons">
+            <a href="https://web.facebook.com/jcc.gimuchurch/photos" target="_blank" class="social-icon" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://youtu.be/CxQurstuLpU?si=r0jp8qR0bsRZ-5WW" target="_blank" class="social-icon" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="#" class="social-icon" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            <a href="#" class="social-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-icon" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+          </div>
+          <!-- Quick Prayer Request -->
+          <div class="footer-prayer">
+            <h4 style="font-size: 14px; margin-top: var(--spacing-md);">Need Prayer?</h4>
+            <form class="footer-prayer-form" onsubmit="event.preventDefault(); alert('Prayer request submitted. We will pray for you!'); this.reset();">
+              <input type="text" placeholder="Your name" required>
+              <textarea placeholder="Prayer request..." rows="2" required></textarea>
+              <button type="submit" class="btn btn-gold btn-sm" style="width: 100%;">Submit Prayer Request</button>
+            </form>
+          </div>
+        </div>
+        <div class="footer-column">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="ministries.html">Ministries</a></li>
+            <li><a href="sermons.html">Sermons</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+          <!-- Subscribe Newsletter -->
+          <div class="footer-newsletter">
+            <h4 style="font-size: 14px; margin-top: var(--spacing-md);">Subscribe to Newsletter</h4>
+            <form class="footer-newsletter-form" onsubmit="event.preventDefault(); alert('You have been subscribed!'); this.reset();">
+              <input type="email" placeholder="Your email" required>
+              <button type="submit" class="btn btn-gold btn-sm" style="width: 100%; margin-top: 8px;">Subscribe</button>
+            </form>
+          </div>
+        </div>
+        <div class="footer-column">
+          <h4>Service Times</h4>
+          <p><strong>Sunday:</strong> 9:00 AM</p>
+          <p><strong>Wednesday:</strong> 6:00 PM</p>
+          <p><strong>Friday:</strong> 6:30 PM</p>
+          <p style="margin-top: var(--spacing-lg); font-size: 14px;"><strong>📍 Location:</strong><br>Athi River, Kenya</p>
+          <p style="font-size: 13px; color: var(--muted-silver); margin-top: var(--spacing-sm);"><strong>🕐 Office Hours:</strong><br>Mon-Fri: 8:00 AM - 5:00 PM</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© <span class="current-year">2025</span> JCC Bethel City | Athi River, Kenya | All Rights Reserved</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

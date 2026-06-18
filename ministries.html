@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ministries - JCC Bethel City</title>
+  <meta name="description" content="Explore the ministries and departments at JCC Bethel City. There's a place for you.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <!-- NAVBAR -->
+  <nav class="navbar" role="navigation" aria-label="Main Navigation">
+    <div class="navbar-brand">
+      <img src="images/logo.png" alt="JCC Bethel City Logo" class="navbar-brand-logo">
+      <span class="navbar-brand-text">JCC Bethel City</span>
+    </div>
+    <ul class="navbar-links">
+      <li><a href="home.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="ministries.html" aria-current="page">Ministries</a></li>
+      <li><a href="sermons.html">Sermons</a></li>
+      <li><a href="events.html">Events</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="give.html" class="navbar-cta">Give</a></li>
+    </ul>
+    <button class="navbar-toggle" aria-label="Toggle Menu" aria-expanded="false">
+      <span class="hamburger-icon">☰</span>
+      <span class="close-icon" style="display:none;">✕</span>
+    </button>
+    <div class="navbar-mobile-menu" role="navigation" aria-label="Mobile Navigation">
+      <div class="mobile-menu-header">
+        <span class="mobile-menu-title">Menu</span>
+        <button class="mobile-menu-close" aria-label="Close Menu">✕</button>
+      </div>
+      <a href="home.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="ministries.html">Ministries</a>
+      <a href="sermons.html">Sermons</a>
+      <a href="events.html">Events</a>
+      <a href="contact.html">Contact</a>
+      <a href="give.html">Give</a>
+    </div>
+  </nav>
+
+  <!-- STICKY GIVE BUTTON -->
+  <a href="give.html" class="sticky-give-btn" aria-label="Give Now">
+    <i class="fas fa-heart"></i> <span>Give Now</span>
+  </a>
+
+  <!-- BACK TO TOP BUTTON -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to Top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <!-- BREADCRUMB NAVIGATION -->
+  <div class="breadcrumb">
+    <div class="container">
+      <a href="home.html"><i class="fas fa-home"></i> Home</a>
+      <span class="breadcrumb-separator">/</span>
+      <span class="breadcrumb-current">Ministries</span>
+      <div class="share-page">
+        <button class="share-btn" onclick="sharePage()" aria-label="Share this page">
+          <i class="fas fa-share-alt"></i> Share
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <main id="main-content">
+    <!-- HERO SECTION - TEXT ONLY -->
+    <section class="section-hero-text" aria-label="Ministries Hero">
+      <div class="container">
+        <div class="hero-text-only">
+          <p class="hero-subtitle-text animate-float">A Place to Belong</p>
+          <div class="hero-divider"></div>
+          <div class="hero-gold-line"></div>
+          <p class="hero-description-text">Every season of life. Every call. Every gift. There is a ministry for you.</p>
+        </div>
+      </div>
+      <!-- Scroll Indicator -->
+      <div class="scroll-indicator">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+      </div>
+    </section>
+
+    <!-- MINISTRIES AT A GLANCE - STATS -->
+    <section class="section" style="padding-top: 0;">
+      <div class="container">
+        <div class="ministry-stats-grid">
+          <div class="ministry-stat-card">
+            <div class="ministry-stat-number">6</div>
+            <div class="ministry-stat-label">Active Ministries</div>
+            <p class="ministry-stat-desc">Serving every season of life</p>
+          </div>
+          <div class="ministry-stat-card">
+            <div class="ministry-stat-number">50+</div>
+            <div class="ministry-stat-label">Ministry Leaders</div>
+            <p class="ministry-stat-desc">Dedicated servants of God</p>
+          </div>
+          <div class="ministry-stat-card">
+            <div class="ministry-stat-number">500+</div>
+            <div class="ministry-stat-label">Active Members</div>
+            <p class="ministry-stat-desc">Growing in faith together</p>
+          </div>
+          <div class="ministry-stat-card">
+            <div class="ministry-stat-number">12+</div>
+            <div class="ministry-stat-label">Years of Service</div>
+            <p class="ministry-stat-desc">Transforming lives through ministry</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- QUICK ACCESS MINISTRY GRID -->
+    <section class="section" style="padding-top: 0;">
+      <div class="container">
+        <h2 style="text-align: center; margin-bottom: var(--spacing-2xl);">Explore Our Ministries</h2>
+        <div class="ministry-quick-grid">
+          <a href="#women" class="ministry-quick-card">
+            <i class="fas fa-people-arrows"></i>
+            <span>Women's Ministry</span>
+          </a>
+          <a href="#men" class="ministry-quick-card">
+            <i class="fas fa-users"></i>
+            <span>Men's Ministry</span>
+          </a>
+          <a href="#welfare" class="ministry-quick-card">
+            <i class="fas fa-hand-holding-heart"></i>
+            <span>Welfare Ministry</span>
+          </a>
+          <a href="#dorcas" class="ministry-quick-card">
+            <i class="fas fa-sewing"></i>
+            <span>Dorcas Ministry</span>
+          </a>
+          <a href="#worship" class="ministry-quick-card">
+            <i class="fas fa-music"></i>
+            <span>Praise & Worship</span>
+          </a>
+          <a href="#sundayschool" class="ministry-quick-card">
+            <i class="fas fa-child"></i>
+            <span>Sunday School</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- MINISTRY 1: WOMEN'S MINISTRY -->
+    <section class="section" id="women">
+      <div class="container">
+        <div class="ministry-row">
+          <div class="ministry-image-wrapper">
+            <div class="ministry-image" style="background-image: linear-gradient(135deg, rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('images/women.jpeg'); background-size: cover; background-position: center; border-radius: 12px; min-height: 350px; position: relative; overflow: hidden;">
+              <div class="ministry-image-overlay"></div>
+              <div class="ministry-image-content">
+                <i class="fas fa-people-arrows" style="font-size: 48px; color: var(--electric-gold);"></i>
+                <h3 style="color: var(--pure-white); margin-top: var(--spacing-md);">Women's Ministry</h3>
+                <span class="join-now-badge">Join Now</span>
+              </div>
+            </div>
+          </div>
+          <div class="ministry-content">
+            <h3>Women's Ministry</h3>
+            <p><strong>Empowering women through the Word and community</strong></p>
+            <p>The Women's Ministry is a safe haven for women of all ages and backgrounds. We gather to pray, study Scripture, grow in our identity as daughters of God, and support one another through life's joys and challenges. Under the shepherding care of Pastor Jacklyn Mucholwa and our ministry leaders, we are discovering our divine assignment and walking in confidence, strength, and grace.</p>
+            
+            <!-- Testimonial -->
+            <div class="ministry-testimonial">
+              <i class="fas fa-quote-left"></i>
+              <p>"This ministry has transformed my life. I've found sisters who pray with me, laugh with me, and walk with me through every season."</p>
+              <span class="testimonial-author">— Mary W., Ministry Member</span>
+            </div>
+            
+            <p><strong><i class="fas fa-user"></i> Leader:</strong> Pastor Jacklyn Mucholwa & Team</p>
+            <p><strong><i class="fas fa-calendar-alt"></i> Meetings:</strong> Second Saturday of each month | 2:00 PM</p>
+            
+            <div class="ministry-actions">
+              <button class="btn btn-primary join-ministry" onclick="joinMinistry('Women\'s Ministry')">Join This Ministry →</button>
+              <button class="btn btn-secondary btn-sm volunteer-btn" onclick="volunteerMinistry('Women\'s Ministry')"><i class="fas fa-hands-helping"></i> Volunteer</button>
+              <button class="btn btn-secondary btn-sm contact-leader-btn" onclick="contactLeader('Women\'s Ministry')"><i class="fas fa-envelope"></i> Contact Leader</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- MINISTRY 2: MEN'S MINISTRY -->
+    <section class="section" id="men">
+      <div class="container">
+        <div class="ministry-row reverse">
+          <div class="ministry-image-wrapper">
+            <div class="ministry-image" style="background-image: linear-gradient(135deg, rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('images/men.jpeg'); background-size: cover; background-position: center; border-radius: 12px; min-height: 350px; position: relative; overflow: hidden;">
+              <div class="ministry-image-overlay"></div>
+              <div class="ministry-image-content">
+                <i class="fas fa-users" style="font-size: 48px; color: var(--electric-gold);"></i>
+                <h3 style="color: var(--pure-white); margin-top: var(--spacing-md);">Men's Ministry</h3>
+                <span class="join-now-badge">Join Now</span>
+              </div>
+            </div>
+          </div>
+          <div class="ministry-content">
+            <h3>Men's Ministry</h3>
+            <p><strong>Building godly men of character and purpose</strong></p>
+            <p>The Men's Ministry calls men to a higher standard of faith, family, and community. We gather for prayer, spiritual accountability, discipleship, and strategic action to reach our families and our city with the gospel. Led by Rev. Rodgers Silali, this is where men become the spiritual leaders God designed them to be—strong, faithful, and on mission.</p>
+            
+            <!-- Testimonial -->
+            <div class="ministry-testimonial">
+              <i class="fas fa-quote-left"></i>
+              <p>"Being part of this men's group has made me a better husband, father, and leader. The accountability and prayer support is unmatched."</p>
+              <span class="testimonial-author">— David K., Ministry Member</span>
+            </div>
+            
+            <p><strong><i class="fas fa-user"></i> Leader:</strong> Rev. Rodgers Silali & Team</p>
+            <p><strong><i class="fas fa-calendar-alt"></i> Meetings:</strong> First Saturday of each month | 10:00 AM</p>
+            
+            <div class="ministry-actions">
+              <button class="btn btn-primary join-ministry" onclick="joinMinistry('Men\'s Ministry')">Join This Ministry →</button>
+              <button class="btn btn-secondary btn-sm volunteer-btn" onclick="volunteerMinistry('Men\'s Ministry')"><i class="fas fa-hands-helping"></i> Volunteer</button>
+              <button class="btn btn-secondary btn-sm contact-leader-btn" onclick="contactLeader('Men\'s Ministry')"><i class="fas fa-envelope"></i> Contact Leader</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- MINISTRY 3: WELFARE MINISTRY -->
+    <section class="section" id="welfare">
+      <div class="container">
+        <div class="ministry-row">
+          <div class="ministry-image-wrapper">
+            <div class="ministry-image" style="background-image: linear-gradient(135deg, rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('images/needy.jpeg'); background-size: cover; background-position: center; border-radius: 12px; min-height: 350px; position: relative; overflow: hidden;">
+              <div class="ministry-image-overlay"></div>
+              <div class="ministry-image-content">
+                <i class="fas fa-hand-holding-heart" style="font-size: 48px; color: var(--electric-gold);"></i>
+                <h3 style="color: var(--pure-white); margin-top: var(--spacing-md);">Welfare Ministry</h3>
+                <span class="join-now-badge">Join Now</span>
+              </div>
+            </div>
+          </div>
+          <div class="ministry-content">
+            <h3>Welfare Ministry</h3>
+            <p><strong>Practical support for families in need</strong></p>
+            <p>Jesus taught that whatever we do for the least among us, we do for Him. The Welfare Ministry identifies families and individuals facing financial hardship, food insecurity, medical emergencies, or educational barriers. We provide practical, dignified support—not hand-outs, but hand-ups—that restore hope and enable people to thrive. Your giving flows through this channel to touch lives that are facing genuine crisis.</p>
+            
+            <!-- Testimonial -->
+            <div class="ministry-testimonial">
+              <i class="fas fa-quote-left"></i>
+              <p>"When our family was going through a difficult time, the Welfare Ministry showed up with love, prayer, and practical help. We will never forget their kindness."</p>
+              <span class="testimonial-author">— Grace M., Ministry Beneficiary</span>
+            </div>
+            
+            <p><strong><i class="fas fa-user"></i> Leader:</strong> Welfare Committee Team</p>
+            <p><strong><i class="fas fa-calendar-alt"></i> How to Help:</strong> Contribute to the Welfare Fund or volunteer your skills</p>
+            
+            <div class="ministry-actions">
+              <button class="btn btn-primary join-ministry" onclick="joinMinistry('Welfare Ministry')">Join This Ministry →</button>
+              <button class="btn btn-secondary btn-sm volunteer-btn" onclick="volunteerMinistry('Welfare Ministry')"><i class="fas fa-hands-helping"></i> Volunteer</button>
+              <button class="btn btn-secondary btn-sm contact-leader-btn" onclick="contactLeader('Welfare Ministry')"><i class="fas fa-envelope"></i> Contact Leader</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- MINISTRY 4: DORCAS MINISTRY -->
+    <section class="section" id="dorcas">
+      <div class="container">
+        <div class="ministry-row reverse">
+          <div class="ministry-image-wrapper">
+            <div class="ministry-image" style="background-image: linear-gradient(135deg, rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('images/dorcas.jpg'); background-size: cover; background-position: center; border-radius: 12px; min-height: 350px; position: relative; overflow: hidden;">
+              <div class="ministry-image-overlay"></div>
+              <div class="ministry-image-content">
+                <i class="fas fa-sewing" style="font-size: 48px; color: var(--electric-gold);"></i>
+                <h3 style="color: var(--pure-white); margin-top: var(--spacing-md);">Dorcas Ministry</h3>
+                <span class="join-now-badge">Join Now</span>
+              </div>
+            </div>
+          </div>
+          <div class="ministry-content">
+            <h3>Dorcas Ministry</h3>
+            <p><strong>Hands-on community service and compassion</strong></p>
+            <p>Named after the woman in Acts 9 who was known for her good works and almsgiving, the Dorcas Ministry embodies hands-on compassion. We sew, prepare meals, distribute care packages, visit the sick, and serve our community with genuine love. This is not a program—it's a posture. It's the lifestyle of a believer who has encountered God's kindness and cannot help but extend it to others.</p>
+            
+            <!-- Testimonial -->
+            <div class="ministry-testimonial">
+              <i class="fas fa-quote-left"></i>
+              <p>"Serving with Dorcas Ministry has opened my eyes to the power of simple acts of love. Every meal we prepare, every visit we make, we see God's love in action."</p>
+              <span class="testimonial-author">— Sarah O., Ministry Volunteer</span>
+            </div>
+            
+            <p><strong><i class="fas fa-user"></i> Leader:</strong> Dorcas Ministry Team</p>
+            <p><strong><i class="fas fa-calendar-alt"></i> Meetings:</strong> Wednesdays | 4:00 PM</p>
+            
+            <div class="ministry-actions">
+              <button class="btn btn-primary join-ministry" onclick="joinMinistry('Dorcas Ministry')">Join This Ministry →</button>
+              <button class="btn btn-secondary btn-sm volunteer-btn" onclick="volunteerMinistry('Dorcas Ministry')"><i class="fas fa-hands-helping"></i> Volunteer</button>
+              <button class="btn btn-secondary btn-sm contact-leader-btn" onclick="contactLeader('Dorcas Ministry')"><i class="fas fa-envelope"></i> Contact Leader</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- MINISTRY 5: PRAISE & WORSHIP MINISTRY -->
+    <section class="section" id="worship">
+      <div class="container">
+        <div class="ministry-row">
+          <div class="ministry-image-wrapper">
+            <div class="ministry-image" style="background-image: linear-gradient(135deg, rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('images/voiceoftriumph.jpeg'); background-size: cover; background-position: center; border-radius: 12px; min-height: 350px; position: relative; overflow: hidden;">
+              <div class="ministry-image-overlay"></div>
+              <div class="ministry-image-content">
+                <i class="fas fa-music" style="font-size: 48px; color: var(--electric-gold);"></i>
+                <h3 style="color: var(--pure-white); margin-top: var(--spacing-md);">Praise & Worship</h3>
+                <span class="join-now-badge">Join Now</span>
+              </div>
+            </div>
+          </div>
+          <div class="ministry-content">
+            <h3>Praise & Worship Ministry</h3>
+            <p><strong>Leading the congregation into God's presence through music</strong></p>
+            <p>Worship is not music—it's a lifestyle. Yet music is one of our most powerful tools to lead people into authentic encounter with God. Our Praise & Worship Ministry is a team of musicians, singers, and technical servants who labor to create a space where heaven and earth meet. Whether you can sing like an angel or carry a tune in a bucket, if your heart burns with worship, there is a place for you here.</p>
+            
+            <!-- Testimonial -->
+            <div class="ministry-testimonial">
+              <i class="fas fa-quote-left"></i>
+              <p>"Leading worship has deepened my relationship with God in ways I never imagined. There's nothing like seeing people encounter His presence through song."</p>
+              <span class="testimonial-author">— James M., Worship Team Member</span>
+            </div>
+            
+            <p><strong><i class="fas fa-user"></i> Leader:</strong> Worship Director & Band Team</p>
+            <p><strong><i class="fas fa-calendar-alt"></i> Rehearsals:</strong> Fridays | 4:00 PM</p>
+            
+            <div class="ministry-actions">
+              <button class="btn btn-primary join-ministry" onclick="joinMinistry('Praise & Worship Ministry')">Join This Ministry →</button>
+              <button class="btn btn-secondary btn-sm volunteer-btn" onclick="volunteerMinistry('Praise & Worship Ministry')"><i class="fas fa-hands-helping"></i> Volunteer</button>
+              <button class="btn btn-secondary btn-sm contact-leader-btn" onclick="contactLeader('Praise & Worship Ministry')"><i class="fas fa-envelope"></i> Contact Leader</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- MINISTRY 6: SUNDAY SCHOOL -->
+    <section class="section" id="sundayschool">
+      <div class="container">
+        <div class="ministry-row reverse">
+          <div class="ministry-image-wrapper">
+            <div class="ministry-image" style="background-image: linear-gradient(135deg, rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('images/sundayschool.jpg'); background-size: cover; background-position: center; border-radius: 12px; min-height: 350px; position: relative; overflow: hidden;">
+              <div class="ministry-image-overlay"></div>
+              <div class="ministry-image-content">
+                <i class="fas fa-child" style="font-size: 48px; color: var(--electric-gold);"></i>
+                <h3 style="color: var(--pure-white); margin-top: var(--spacing-md);">Sunday School</h3>
+                <span class="join-now-badge">Join Now</span>
+              </div>
+            </div>
+          </div>
+          <div class="ministry-content">
+            <h3>Sunday School</h3>
+            <p><strong>Faith formation for children aged 3–12</strong></p>
+            <p>The Sunday School Ministry is where the next generation encounters Jesus and builds a foundation of faith for their entire lives. Through Bible stories, interactive lessons, prayer, worship, and community, we help children know Jesus personally, love His Word, and discover their purpose in His kingdom. Parents, your children are not just being cared for—they are being discipled by a team that loves them as their own.</p>
+            
+            <!-- Testimonial -->
+            <div class="ministry-testimonial">
+              <i class="fas fa-quote-left"></i>
+              <p>"My children look forward to Sunday School every week. The teachers are so loving, and I can see the Word of God coming alive in their little hearts."</p>
+              <span class="testimonial-author">— Elizabeth W., Parent</span>
+            </div>
+            
+            <p><strong><i class="fas fa-user"></i> Leader:</strong> Sunday School Coordinator & Teachers</p>
+            <p><strong><i class="fas fa-calendar-alt"></i> Schedule:</strong> Every Sunday | 9:00 AM (concurrent with main service)</p>
+            
+            <div class="ministry-actions">
+              <button class="btn btn-primary join-ministry" onclick="joinMinistry('Sunday School')">Join This Ministry →</button>
+              <button class="btn btn-secondary btn-sm volunteer-btn" onclick="volunteerMinistry('Sunday School')"><i class="fas fa-hands-helping"></i> Volunteer</button>
+              <button class="btn btn-secondary btn-sm contact-leader-btn" onclick="contactLeader('Sunday School')"><i class="fas fa-envelope"></i> Contact Leader</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- CALL TO ACTION -->
+    <section class="section" style="background: linear-gradient(135deg, rgba(245,197,24,0.05) 0%, transparent 100%); text-align: center;">
+      <div class="container">
+        <h2 style="margin-bottom: var(--spacing-lg);">Your Gift, God's Kingdom</h2>
+        <p style="font-size: 18px; color: var(--muted-silver); max-width: 700px; margin: 0 auto var(--spacing-2xl); line-height: 1.8;">The Holy Spirit has given every believer gifts and calling. Whether you lead, serve, teach, pray, comfort, or build, there is a strategic place where your contribution matters. Don't sit on the sidelines. Get in the game.</p>
+        <div class="grid-3" style="margin-bottom: var(--spacing-2xl); max-width: 800px; margin-left: auto; margin-right: auto;">
+          <a href="contact.html" class="btn btn-primary btn-lg">Tell Us About Your Interest</a>
+          <a href="sermons.html" class="btn btn-secondary btn-lg">Watch a Message</a>
+          <a href="events.html" class="btn btn-gold btn-lg">See Events</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SCRIPTURE BANNER -->
+    <section class="scripture-banner" aria-label="Scripture">
+      <p class="scripture-text">"Now to each one the manifestation of the Spirit is given for the common good."</p>
+      <p class="scripture-reference">— 1 Corinthians 12:7</p>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer role="contentinfo">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-column">
+          <h4>JCC Bethel City</h4>
+          <p>Where Heaven Meets Athi River</p>
+          <div class="social-icons">
+            <a href="https://web.facebook.com/jcc.gimuchurch/photos" target="_blank" class="social-icon" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://youtu.be/CxQurstuLpU?si=r0jp8qR0bsRZ-5WW" target="_blank" class="social-icon" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="#" class="social-icon" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            <a href="#" class="social-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-icon" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+          </div>
+          <!-- Quick Prayer Request -->
+          <div class="footer-prayer">
+            <h4 style="font-size: 14px; margin-top: var(--spacing-md);">Need Prayer?</h4>
+            <form class="footer-prayer-form" onsubmit="event.preventDefault(); alert('Prayer request submitted. We will pray for you!'); this.reset();">
+              <input type="text" placeholder="Your name" required>
+              <textarea placeholder="Prayer request..." rows="2" required></textarea>
+              <button type="submit" class="btn btn-gold btn-sm" style="width: 100%;">Submit Prayer Request</button>
+            </form>
+          </div>
+        </div>
+        <div class="footer-column">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="ministries.html">Ministries</a></li>
+            <li><a href="sermons.html">Sermons</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+          <!-- Subscribe Newsletter -->
+          <div class="footer-newsletter">
+            <h4 style="font-size: 14px; margin-top: var(--spacing-md);">Subscribe to Newsletter</h4>
+            <form class="footer-newsletter-form" onsubmit="event.preventDefault(); alert('You have been subscribed!'); this.reset();">
+              <input type="email" placeholder="Your email" required>
+              <button type="submit" class="btn btn-gold btn-sm" style="width: 100%; margin-top: 8px;">Subscribe</button>
+            </form>
+          </div>
+        </div>
+        <div class="footer-column">
+          <h4>Service Times</h4>
+          <p><strong>Sunday:</strong> 9:00 AM</p>
+          <p><strong>Wednesday:</strong> 6:00 PM</p>
+          <p><strong>Friday:</strong> 6:30 PM</p>
+          <p style="margin-top: var(--spacing-lg); font-size: 14px;"><strong>📍 Location:</strong><br>Athi River, Kenya</p>
+          <p style="font-size: 13px; color: var(--muted-silver); margin-top: var(--spacing-sm);"><strong>🕐 Office Hours:</strong><br>Mon-Fri: 8:00 AM - 5:00 PM</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© <span class="current-year">2025</span> JCC Bethel City | Athi River, Kenya | All Rights Reserved</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

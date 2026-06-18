@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us - JCC Bethel City</title>
+  <meta name="description" content="Contact JCC Bethel City in Athi River, Kenya. Visit us, call us, or send us a message. We'd love to hear from you.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <!-- NAVBAR -->
+  <nav class="navbar" role="navigation" aria-label="Main Navigation">
+    <div class="navbar-brand">
+      <img src="images/logo.png" alt="JCC Bethel City Logo" class="navbar-brand-logo">
+      <span class="navbar-brand-text">JCC Bethel City</span>
+    </div>
+    <ul class="navbar-links">
+      <li><a href="home.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="ministries.html">Ministries</a></li>
+      <li><a href="sermons.html">Sermons</a></li>
+      <li><a href="events.html">Events</a></li>
+      <li><a href="contact.html" aria-current="page">Contact</a></li>
+      <li><a href="give.html" class="navbar-cta">Give</a></li>
+    </ul>
+    <button class="navbar-toggle" aria-label="Toggle Menu" aria-expanded="false">
+      <span class="hamburger-icon">☰</span>
+      <span class="close-icon" style="display:none;">✕</span>
+    </button>
+    <div class="navbar-mobile-menu" role="navigation" aria-label="Mobile Navigation">
+      <div class="mobile-menu-header">
+        <span class="mobile-menu-title">Menu</span>
+        <button class="mobile-menu-close" aria-label="Close Menu">✕</button>
+      </div>
+      <a href="home.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="ministries.html">Ministries</a>
+      <a href="sermons.html">Sermons</a>
+      <a href="events.html">Events</a>
+      <a href="contact.html">Contact</a>
+      <a href="give.html">Give</a>
+    </div>
+  </nav>
+
+  <!-- STICKY GIVE BUTTON -->
+  <a href="give.html" class="sticky-give-btn" aria-label="Give Now">
+    <i class="fas fa-heart"></i> <span>Give Now</span>
+  </a>
+
+  <!-- BACK TO TOP BUTTON -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to Top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <!-- URGENT PRAYER BANNER -->
+  <div class="urgent-prayer-banner">
+    <div class="container">
+      <i class="fas fa-hands-praying"></i>
+      <span>Need urgent prayer? Call us now: <a href="tel:+254796316316">+254 796 316 316</a></span>
+      <i class="fas fa-phone"></i>
+    </div>
+  </div>
+
+  <!-- BREADCRUMB NAVIGATION -->
+  <div class="breadcrumb">
+    <div class="container">
+      <a href="home.html"><i class="fas fa-home"></i> Home</a>
+      <span class="breadcrumb-separator">/</span>
+      <span class="breadcrumb-current">Contact Us</span>
+      <div class="share-page">
+        <button class="share-btn" onclick="sharePage()" aria-label="Share this page">
+          <i class="fas fa-share-alt"></i> Share
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <main id="main-content">
+    <!-- HERO SECTION - TEXT ONLY -->
+    <section class="section-hero-text" aria-label="Contact Hero">
+      <div class="container">
+        <div class="hero-text-only">
+          <p class="hero-subtitle-text animate-float">We'd Love to Hear From You</p>
+          <div class="hero-divider"></div>
+          <div class="hero-gold-line"></div>
+          <p class="hero-description-text">Have a question? Want to visit? Need prayer? Reach out. We're here.</p>
+        </div>
+      </div>
+      <!-- Scroll Indicator -->
+      <div class="scroll-indicator">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section class="section">
+      <div class="container">
+        <div class="contact-grid">
+          <!-- LEFT: CONTACT DETAILS -->
+          <div class="contact-details">
+            <h3 style="color: var(--electric-gold); margin-bottom: var(--spacing-lg);"><i class="fas fa-address-card"></i> Get In Touch</h3>
+            
+            <div class="contact-card">
+              <div class="contact-icon"><i class="fas fa-location-dot"></i></div>
+              <div class="contact-info">
+                <h4>Location</h4>
+                <p>Athi River, Kenya</p>
+                <a href="#map" class="contact-action-link"><i class="fas fa-directions"></i> Get Directions</a>
+              </div>
+            </div>
+
+            <div class="contact-card">
+              <div class="contact-icon"><i class="fas fa-phone"></i></div>
+              <div class="contact-info">
+                <h4>Phone</h4>
+                <p><a href="tel:+254796316316">+254 796 316 316</a></p>
+                <p class="contact-note">Call us during service times or leave a message</p>
+                <a href="tel:+254796316316" class="contact-action-link"><i class="fas fa-phone"></i> Click to Call</a>
+              </div>
+            </div>
+
+            <div class="contact-card">
+              <div class="contact-icon"><i class="fab fa-whatsapp"></i></div>
+              <div class="contact-info">
+                <h4>WhatsApp</h4>
+                <p><a href="https://wa.me/254796316316" target="_blank">+254 796 316 316</a></p>
+                <p class="contact-note">Send us a message on WhatsApp. We respond during business hours.</p>
+                <a href="https://wa.me/254796316316?text=Hello%20JCC%20Bethel%20City%2C%20I%20have%20a%20question%20about..." target="_blank" class="contact-action-link"><i class="fab fa-whatsapp"></i> Send WhatsApp</a>
+              </div>
+            </div>
+
+            <div class="contact-card">
+              <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+              <div class="contact-info">
+                <h4>Email</h4>
+                <p><a href="mailto:info@jccbethelcity.org">info@jccbethelcity.org</a></p>
+              </div>
+            </div>
+
+            <div class="contact-card">
+              <div class="contact-icon"><i class="fas fa-clock"></i></div>
+              <div class="contact-info">
+                <h4>Service Times</h4>
+                <p><strong>Sunday:</strong> 9:00 AM</p>
+                <p><strong>Wednesday:</strong> 6:00 PM</p>
+                <p><strong>Friday:</strong> 6:30 PM</p>
+                <p class="contact-note" style="margin-top: var(--spacing-sm);"><strong>Office Hours:</strong> Mon-Fri: 8:00 AM - 5:00 PM</p>
+              </div>
+            </div>
+
+            <div class="contact-card">
+              <div class="contact-icon"><i class="fas fa-share-nodes"></i></div>
+              <div class="contact-info">
+                <h4>Follow Us</h4>
+                <div class="contact-social-icons">
+                  <a href="https://web.facebook.com/jcc.gimuchurch/photos" target="_blank" class="contact-social-icon" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                  <a href="https://youtu.be/CxQurstuLpU?si=r0jp8qR0bsRZ-5WW" target="_blank" class="contact-social-icon" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                  <a href="#" class="contact-social-icon" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                  <a href="#" class="contact-social-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+              </div>
+            </div>
+
+            <!-- QR Code Section -->
+            <div class="contact-card qr-card">
+              <div class="contact-icon"><i class="fas fa-qrcode"></i></div>
+              <div class="contact-info">
+                <h4>Quick Contact</h4>
+                <p>Scan to save our contact</p>
+                <div class="qr-placeholder">
+                  <i class="fas fa-qrcode" style="font-size: 60px; color: var(--electric-gold); opacity: 0.5;"></i>
+                  <span style="font-size: 12px; color: var(--muted-silver); display: block; margin-top: 4px;">QR Code</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- RIGHT: CONTACT FORM -->
+          <div class="contact-form-wrapper">
+            <h3 style="color: var(--electric-gold); margin-bottom: var(--spacing-lg);"><i class="fas fa-paper-plane"></i> Send Us a Message</h3>
+            <form class="contact-form" onsubmit="submitContactForm(event)" id="contactForm">
+              <div class="form-group">
+                <label for="name"><i class="fas fa-user"></i> Your Name</label>
+                <input type="text" id="name" name="name" placeholder="John Doe" required autofocus>
+              </div>
+
+              <div class="form-group">
+                <label for="email"><i class="fas fa-envelope"></i> Email Address</label>
+                <input type="email" id="email" name="email" placeholder="you@example.com" required>
+              </div>
+
+              <div class="form-group">
+                <label for="phone"><i class="fas fa-phone"></i> Phone Number</label>
+                <input type="tel" id="phone" name="phone" placeholder="+254 7XX XXX XXX">
+              </div>
+
+              <div class="form-group">
+                <label for="subject"><i class="fas fa-tag"></i> Subject</label>
+                <select id="subject" name="subject" required>
+                  <option value="">Select a subject...</option>
+                  <option value="Prayer Request">🙏 Prayer Request</option>
+                  <option value="Visit">🚶 Visit Inquiry</option>
+                  <option value="Question">❓ Question</option>
+                  <option value="Ministry Interest">🤝 Ministry Interest</option>
+                  <option value="Feedback">💬 Feedback</option>
+                  <option value="Other">📝 Other</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="preferred-contact"><i class="fas fa-comment-dots"></i> Preferred Contact Method</label>
+                <select id="preferred-contact" name="preferred-contact">
+                  <option value="Email">Email</option>
+                  <option value="Phone">Phone</option>
+                  <option value="WhatsApp">WhatsApp</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="message"><i class="fas fa-comment"></i> Message</label>
+                <textarea id="message" name="message" placeholder="Tell us what's on your heart..." required oninput="updateCharCount(this)"></textarea>
+                <div class="char-counter">
+                  <span id="charCount">0</span> / 500 characters
+                </div>
+              </div>
+
+              <!-- Honeypot field (anti-spam) -->
+              <div class="honeypot-field" style="display:none;">
+                <label for="website">Website</label>
+                <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">
+                <i class="fas fa-paper-plane"></i> Send Message
+              </button>
+            </form>
+
+            <!-- Success Modal -->
+            <div class="success-modal" id="successModal">
+              <div class="success-modal-content">
+                <div class="success-icon"><i class="fas fa-check-circle"></i></div>
+                <h3>Message Sent! ✓</h3>
+                <p>Thank you for reaching out to us. We will get back to you as soon as possible.</p>
+                <button class="btn btn-gold" onclick="closeSuccessModal()">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- MAP SECTION -->
+    <section class="section" id="map">
+      <div class="container">
+        <h2 style="text-align: center; margin-bottom: var(--spacing-lg);"><i class="fas fa-map"></i> Find Us</h2>
+        <p style="text-align: center; color: var(--muted-silver); margin-bottom: var(--spacing-lg);">Located in the heart of Athi River. Easy to find, impossible to forget.</p>
+        <div class="map-container">
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d3988.5731951567086!2d37.00218962482137!3d-1.431458870902031!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2ske!4v1781769439702!5m2!1sen!2ske" 
+            width="100%" 
+            height="450" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade"
+            title="JCC Bethel City Location Map">
+          </iframe>
+        </div>
+        <div style="text-align: center; margin-top: var(--spacing-lg);">
+          <a href="https://www.google.com/maps/dir/?api=1&destination=H292%2BC98+Athi+River" target="_blank" class="btn btn-gold btn-lg">
+            <i class="fas fa-directions"></i> Get Directions
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- PRAYER REQUEST SECTION -->
+    <section class="section" style="background: linear-gradient(135deg, rgba(245,197,24,0.05) 0%, transparent 100%);">
+      <div class="container">
+        <h2 style="text-align: center; margin-bottom: var(--spacing-2xl);"><i class="fas fa-hands-praying"></i> Submit a Prayer Request</h2>
+        <div class="prayer-card" style="max-width: 700px; margin: 0 auto; border-top: 3px solid var(--flame-orange);">
+          <h3 style="color: var(--flame-orange); margin-bottom: var(--spacing-lg);"><i class="fas fa-pray"></i> Prayer Changes Things</h3>
+          <p style="color: var(--muted-silver); margin-bottom: var(--spacing-lg); line-height: 1.8;">Submit a prayer request and our prayer warriors will intercede on your behalf. Whether it's healing, finances, relationships, or breakthrough, we believe God hears and answers prayer.</p>
+          
+          <!-- Prayer Testimonial -->
+          <div class="prayer-testimonial">
+            <i class="fas fa-quote-left"></i>
+            <p>"I submitted a prayer request for my health, and within weeks I received my healing. God is faithful!"</p>
+            <span class="testimonial-author">— Anonymous</span>
+          </div>
+          
+          <form class="prayer-form" onsubmit="submitPrayerRequest(event)">
+            <div class="form-group">
+              <label for="prayer-name"><i class="fas fa-user"></i> Your Name</label>
+              <input type="text" id="prayer-name" name="name" placeholder="What should we call you?" required>
+            </div>
+
+            <div class="form-group">
+              <label for="prayer-type"><i class="fas fa-tag"></i> Prayer Request Type</label>
+              <select id="prayer-type" name="prayer-type" required>
+                <option value="">Select a type...</option>
+                <option value="Healing">🩺 Healing</option>
+                <option value="Finances">💰 Finances</option>
+                <option value="Relationships">💕 Relationships</option>
+                <option value="Breakthrough">⚡ Breakthrough</option>
+                <option value="Salvation">✝️ Salvation</option>
+                <option value="Guidance">🧭 Guidance</option>
+                <option value="Other">📝 Other</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="prayer-request"><i class="fas fa-comment-dots"></i> Prayer Request</label>
+              <textarea id="prayer-request" name="request" placeholder="Share what we should pray for. Be as detailed as you'd like." required></textarea>
+            </div>
+
+            <div class="form-group">
+              <label for="prayer-phone"><i class="fas fa-phone"></i> Phone (Optional)</label>
+              <input type="tel" id="prayer-phone" name="phone" placeholder="If you'd like us to follow up">
+            </div>
+
+            <div class="form-group">
+              <label>
+                <input type="checkbox" id="prayer-private" name="private" value="1" checked>
+                <span style="color: var(--muted-silver); font-size: 14px;">Keep this request private (only shared with prayer team)</span>
+              </label>
+            </div>
+
+            <div class="form-group" style="display: none;">
+              <label><input type="checkbox" id="prayer-public" name="public" value="1"> Allow this request to be shared publicly for more prayers</label>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">
+              <i class="fas fa-paper-plane"></i> Submit Prayer Request
+            </button>
+          </form>
+
+          <!-- Answered Prayers Count -->
+          <div class="answered-prayers">
+            <i class="fas fa-check-circle"></i>
+            <span><strong>1,247+</strong> prayers answered</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- FAQ SECTION - ACCORDION -->
+    <section class="section">
+      <div class="container">
+        <h2 style="text-align: center; margin-bottom: var(--spacing-lg);"><i class="fas fa-circle-question"></i> Frequently Asked Questions</h2>
+        <p style="text-align: center; color: var(--muted-silver); margin-bottom: var(--spacing-2xl);">Find answers to the most common questions about our church.</p>
+        
+        <!-- FAQ Search -->
+        <div class="faq-search">
+          <input type="text" id="faqSearch" placeholder="Search FAQs..." oninput="filterFAQs(this.value)">
+          <i class="fas fa-search"></i>
+        </div>
+
+        <div class="faq-accordion" id="faqAccordion">
+          <!-- FAQ 1 -->
+          <div class="faq-item" data-tags="dress code, wear, clothes, outfit">
+            <div class="faq-question" onclick="toggleFAQ(this)">
+              <span><i class="fas fa-shirt"></i> What do I wear to church?</span>
+              <i class="fas fa-chevron-down faq-arrow"></i>
+            </div>
+            <div class="faq-answer">
+              <p>Come as you are. We have no dress code. Wear what makes you comfortable. We focus on the heart, not the outfit. Whether you prefer formal attire or casual clothes, you are welcome here.</p>
+            </div>
+          </div>
+
+          <!-- FAQ 2 -->
+          <div class="faq-item" data-tags="new, first time, visitor, welcome">
+            <div class="faq-question" onclick="toggleFAQ(this)">
+              <span><i class="fas fa-handshake"></i> Is it okay if I'm new?</span>
+              <i class="fas fa-chevron-down faq-arrow"></i>
+            </div>
+            <div class="faq-answer">
+              <p>Absolutely! You are not an accident, and your presence is not a mistake. We have a dedicated team to welcome first-time visitors. You'll be loved and cared for from the moment you walk through our doors.</p>
+            </div>
+          </div>
+
+          <!-- FAQ 3 -->
+          <div class="faq-item" data-tags="parking, car, drive, mobility">
+            <div class="faq-question" onclick="toggleFAQ(this)">
+              <span><i class="fas fa-car"></i> Where do I park?</span>
+              <i class="fas fa-chevron-down faq-arrow"></i>
+            </div>
+            <div class="faq-answer">
+              <p>Parking is available on the church grounds. If you have mobility challenges, please let us know—we have designated spaces close to the entrance. Our ushers will be happy to assist you.</p>
+            </div>
+          </div>
+
+          <!-- FAQ 4 -->
+          <div class="faq-item" data-tags="children, childcare, kids, sunday school">
+            <div class="faq-question" onclick="toggleFAQ(this)">
+              <span><i class="fas fa-child"></i> Do you have childcare?</span>
+              <i class="fas fa-chevron-down faq-arrow"></i>
+            </div>
+            <div class="faq-answer">
+              <p>Yes! We have Sunday School for children aged 3-12 during the Sunday service. Our trained, loving teachers create a safe, faith-filled environment where your children can learn about God's love through Bible stories, activities, and prayer.</p>
+            </div>
+          </div>
+
+          <!-- FAQ 5 -->
+          <div class="faq-item" data-tags="ministry, serve, join, volunteer">
+            <div class="faq-question" onclick="toggleFAQ(this)">
+              <span><i class="fas fa-hands-praying"></i> How do I join a ministry?</span>
+              <i class="fas fa-chevron-down faq-arrow"></i>
+            </div>
+            <div class="faq-answer">
+              <p>Talk to one of our ushers, visit the <a href="ministries.html">ministries page</a>, or fill out our contact form. We'll connect you with leaders in your area of interest. There's a place for everyone to serve!</p>
+            </div>
+          </div>
+
+          <!-- FAQ 6 -->
+          <div class="faq-item" data-tags="questions, help, support, leaders">
+            <div class="faq-question" onclick="toggleFAQ(this)">
+              <span><i class="fas fa-circle-question"></i> What if I have questions?</span>
+              <i class="fas fa-chevron-down faq-arrow"></i>
+            </div>
+            <div class="faq-answer">
+              <p>Ask away! We have pastors and leaders available before and after service, or reach out via phone/WhatsApp. No question is too small. We're here to help you on your faith journey.</p>
+            </div>
+          </div>
+
+          <!-- FAQ 7 -->
+          <div class="faq-item" data-tags="online, live stream, virtual">
+            <div class="faq-question" onclick="toggleFAQ(this)">
+              <span><i class="fas fa-video"></i> Can I watch services online?</span>
+              <i class="fas fa-chevron-down faq-arrow"></i>
+            </div>
+            <div class="faq-answer">
+              <p>Yes! We offer live streaming of our Sunday services on our <a href="https://youtu.be/CxQurstuLpU?si=r0jp8qR0bsRZ-5WW" target="_blank">YouTube channel</a>. You can also watch past sermons anytime. Stay connected even when you can't be with us in person.</p>
+            </div>
+          </div>
+
+          <!-- FAQ 8 -->
+          <div class="faq-item" data-tags="giving, tithe, offering, donate">
+            <div class="faq-question" onclick="toggleFAQ(this)">
+              <span><i class="fas fa-hand-holding-heart"></i> How can I give or tithe?</span>
+              <i class="fas fa-chevron-down faq-arrow"></i>
+            </div>
+            <div class="faq-answer">
+              <p>You can give via <a href="give.html">M-Pesa Paybill 588344 (Account: Reason for Giving)</a>, bank transfer, or during our services. Every gift, no matter the size, helps us reach more lives with the gospel.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- VISITOR TESTIMONIAL -->
+    <section class="section" style="background: linear-gradient(135deg, rgba(245,197,24,0.05) 0%, transparent 100%); text-align: center;">
+      <div class="container">
+        <h2 style="margin-bottom: var(--spacing-lg);"><i class="fas fa-comment"></i> What Our Visitors Say</h2>
+        <div class="visitor-testimonial">
+          <i class="fas fa-quote-left"></i>
+          <p>"I visited JCC Bethel City for the first time and felt immediately welcomed. The warmth of the people and the power of the worship service changed my life. I'm now a regular member!"</p>
+          <span class="testimonial-author">— Sarah M., First-time visitor</span>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- FINAL WELCOME MESSAGE -->
+    <section class="section" style="text-align: center;">
+      <div class="container">
+        <h2 style="margin-bottom: var(--spacing-lg);"><i class="fas fa-heart"></i> We Can't Wait to Meet You</h2>
+        <p style="font-size: 18px; color: var(--muted-silver); max-width: 700px; margin: 0 auto var(--spacing-2xl); line-height: 1.8;">Whether you visit us next week, next month, or someday in the future, know this: you have a place at JCC Bethel City. You belong here. You are loved. You matter.</p>
+        <div style="display: flex; gap: var(--spacing-md); justify-content: center; flex-wrap: wrap;">
+          <a href="#map" class="btn btn-primary btn-lg"><i class="fas fa-directions"></i> Visit Us</a>
+          <a href="home.html" class="btn btn-secondary btn-lg"><i class="fas fa-arrow-right"></i> See You Sunday →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SCRIPTURE BANNER -->
+    <section class="scripture-banner" aria-label="Scripture">
+      <p class="scripture-text">"Here I am! I stand at the door and knock. If anyone hears my voice and opens the door, I will come in and eat with that person, and they with me."</p>
+      <p class="scripture-reference">— Revelation 3:20</p>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer role="contentinfo">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-column">
+          <h4>JCC Bethel City</h4>
+          <p>Where Heaven Meets Athi River</p>
+          <div class="social-icons">
+            <a href="https://web.facebook.com/jcc.gimuchurch/photos" target="_blank" class="social-icon" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://youtu.be/CxQurstuLpU?si=r0jp8qR0bsRZ-5WW" target="_blank" class="social-icon" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="#" class="social-icon" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            <a href="#" class="social-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-icon" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+          </div>
+          <!-- Quick Prayer Request -->
+          <div class="footer-prayer">
+            <h4 style="font-size: 14px; margin-top: var(--spacing-md);">Need Prayer?</h4>
+            <form class="footer-prayer-form" onsubmit="event.preventDefault(); alert('Prayer request submitted. We will pray for you!'); this.reset();">
+              <input type="text" placeholder="Your name" required>
+              <textarea placeholder="Prayer request..." rows="2" required></textarea>
+              <button type="submit" class="btn btn-gold btn-sm" style="width: 100%;">Submit Prayer Request</button>
+            </form>
+          </div>
+        </div>
+        <div class="footer-column">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="ministries.html">Ministries</a></li>
+            <li><a href="sermons.html">Sermons</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+          <!-- Subscribe Newsletter -->
+          <div class="footer-newsletter">
+            <h4 style="font-size: 14px; margin-top: var(--spacing-md);">Subscribe to Newsletter</h4>
+            <form class="footer-newsletter-form" onsubmit="event.preventDefault(); alert('You have been subscribed!'); this.reset();">
+              <input type="email" placeholder="Your email" required>
+              <button type="submit" class="btn btn-gold btn-sm" style="width: 100%; margin-top: 8px;">Subscribe</button>
+            </form>
+          </div>
+        </div>
+        <div class="footer-column">
+          <h4>Service Times</h4>
+          <p><strong>Sunday:</strong> 9:00 AM</p>
+          <p><strong>Wednesday:</strong> 6:00 PM</p>
+          <p><strong>Friday:</strong> 6:30 PM</p>
+          <p style="margin-top: var(--spacing-lg); font-size: 14px;"><strong>📍 Location:</strong><br>Athi River, Kenya</p>
+          <p style="font-size: 13px; color: var(--muted-silver); margin-top: var(--spacing-sm);"><strong>🕐 Office Hours:</strong><br>Mon-Fri: 8:00 AM - 5:00 PM</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© <span class="current-year">2025</span> JCC Bethel City | Athi River, Kenya | All Rights Reserved</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
