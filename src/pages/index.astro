@@ -1,0 +1,165 @@
+---
+import Layout from '../layouts/Layout.astro';
+import site from '../data/site.json';
+import sermons from '../data/sermons.json';
+import events from '../data/events.json';
+const latest = sermons.sermons[0];
+const upcoming = events.events.filter((e) => new Date(e.date) >= new Date()).sort((a, b) => new Date(a.date) - new Date(b.date)).slice(0, 3);
+const ministries = [
+  { id: 'women', title: 'Women', desc: 'Sisters growing in faith together.', img: '/images/ministry-women.jpg' },
+  { id: 'men', title: 'Men', desc: 'Men building godly families.', img: '/images/ministry-men.jpg' },
+  { id: 'youth', title: 'Youth', desc: 'Next-gen believers finding purpose.', img: '/images/ministry-youth.jpg' },
+  { id: 'welfare', title: 'Welfare', desc: 'Practical care for real needs.', img: '/images/ministry-welfare.jpg' },
+  { id: 'dorcas', title: 'Dorcas', desc: 'Hands-on compassion in action.', img: '/images/ministry-dorcas.jpg' },
+  { id: 'worship', title: 'Praise & Worship', desc: 'The Voice of Triumph choir.', img: '/images/ministry-worship.jpg' },
+  { id: 'sundayschool', title: 'Sunday School', desc: 'Ages 3 to 12, every Sunday.', img: '/images/ministry-sundayschool.jpg' },
+];
+const svcIcons = {
+  sun: '<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>',
+  book: '<path d="M4 4h6a4 4 0 0 1 4 4v12a3 3 0 0 0-3-3H4z"/><path d="M20 4h-6a4 4 0 0 0-4 4v12a3 3 0 0 1 3-3h7z"/>',
+  pray: '<path d="M12 3v18M7 8l5-5 5 5M7 16l5 5 5-5"/>',
+};
+function formatTime(t) { const [h, m] = t.split(':').map(Number); return `${h % 12 || 12}:${String(m).padStart(2, '0')} ${h >= 12 ? 'PM' : 'AM'}`; }
+---
+<Layout title="JCC Bethel City | Home of World Changers — Athi River" description="JCC Bethel City is a Spirit-filled church in Athi River, Kenya — home of world changers. Sunday 9 AM, Wednesday 6 PM, Friday 6:30 PM. Plan your visit today." path="/">
+  <section class="hero reveal">
+    <div class="hero-bg">
+      <img src="/images/hero-home.jpg" alt="JCC Bethel City congregation in worship" width="1600" height="1000" fetchpriority="high" />
+    </div>
+    <div class="sunrise" aria-hidden="true"></div>
+    <div class="hero-content">
+      <div class="status-chip" data-status-chip><span class="dot"></span> Finding next service…</div>
+      <h1>Home of <span class="accent">World Changers.</span></h1>
+      <p class="hero-sub">JCC Bethel City · Athi River</p>
+      <div class="hero-ctas">
+        <a href="/visit/" class="btn btn-primary btn-lg">Plan Your Visit</a>
+        <a href="/watch/" class="btn btn-on-dark btn-lg">Watch Latest</a>
+      </div>
+      <p style="margin-top: var(--s-2); font-size: var(--fs-xs); color: rgba(255,255,255,0.75);">
+        {site.contact.plusCode} · <a href={site.contact.directions} target="_blank" rel="noopener" style="color: var(--gold); font-weight: 600;">Get Directions →</a>
+      </p>
+    </div>
+  </section>
+
+  <section class="section-tight reveal">
+    <div class="container">
+      <div class="services">
+        {site.services.map((s) => (
+          <div class="service">
+            <div class="svc-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" set:html={svcIcons[s.icon]} /></div>
+            <div><div class="svc-name">{s.name}</div><div class="svc-time">{s.time}</div><div class="svc-place">{s.short} · {s.place}</div></div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section-tight">
+    <div class="container">
+      <div class="bento reveal">
+        <div class="card card-hover card-feature bento-wide">
+          <div>
+            <div class="eyebrow">Come as you are</div>
+            <h3 style="margin:0;">Casual clothes, real people, a living God.</h3>
+          </div>
+          <a href="/visit/" class="card-arrow">What to expect →</a>
+        </div>
+        <div class="card card-hover card-feature">
+          <div>
+            <div class="eyebrow">Kids welcome</div>
+            <h3 style="margin:0; font-size:1.1rem;">Sunday School · ages 3–12</h3>
+          </div>
+          <a href="/ministries/" class="card-arrow">Learn more →</a>
+        </div>
+        <div class="card card-hover card-feature">
+          <div>
+            <div class="eyebrow">Free parking</div>
+            <h3 style="margin:0; font-size:1.1rem;">On the church grounds.</h3>
+          </div>
+          <a href={site.contact.directions} target="_blank" rel="noopener" class="card-arrow">Directions →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-tight">
+    <div class="container">
+      <div class="reveal" style="display:flex; justify-content:space-between; align-items:end; margin-bottom: var(--s-2); gap: var(--s-2); flex-wrap:wrap;">
+        <div><div class="eyebrow">Latest message</div><h2 style="margin:0;">Hear what God is saying.</h2></div>
+        <a href="/watch/" class="link-tertiary">All messages →</a>
+      </div>
+      <div class="reveal" data-yt-wrap style="position:relative; aspect-ratio: 16/9; background: var(--navy); border-radius: var(--r-lg); overflow:hidden; cursor:pointer; max-width: 760px; margin: 0 auto; box-shadow: var(--shadow);">
+        <img src="/images/sermon-latest.jpg" alt="" width="1280" height="720" loading="lazy" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:0.75;" />
+        <button type="button" data-yt={latest.videoId} aria-label="Play latest message" style="position:absolute; inset:0; background:none; border:none; display:grid; place-items:center; cursor:pointer;">
+          <span style="width: 76px; height: 76px; border-radius:50%; background: var(--gold); display:grid; place-items:center; box-shadow: 0 8px 32px rgba(0,0,0,0.4);">
+            <svg viewBox="0 0 24 24" fill="var(--navy)" width="30" height="30"><polygon points="8 5 20 12 8 19 8 5"/></svg>
+          </span>
+        </button>
+        <div style="position:absolute; left:16px; bottom:16px; right:16px; color:#fff; text-shadow: 0 1px 8px rgba(0,0,0,0.6);">
+          <div style="font-weight:700; font-size:1.05rem;">{latest.title}</div>
+          <div style="font-size:0.8rem; opacity:0.85;">{latest.speaker}</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-tight">
+    <div class="container">
+      <div class="reveal" style="display:flex; justify-content:space-between; align-items:end; margin-bottom: var(--s-2);">
+        <div><div class="eyebrow">Ministries</div><h2 style="margin:0;">A place for you.</h2></div>
+        <a href="/ministries/" class="link-tertiary">See all 7 →</a>
+      </div>
+      <div class="ministry-strip reveal">
+        {ministries.slice(0, 4).map((m) => (
+          <a href="/ministries/" class="card card-hover card-media">
+            <img src={m.img} alt="" width="400" height="300" loading="lazy" />
+            <div class="card-body">
+              <div class="card-title">{m.title}</div>
+              <div class="card-sub">{m.desc}</div>
+              <span class="card-cta">Explore →</span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section-tight">
+    <div class="container">
+      <div class="reveal" style="display:flex; justify-content:space-between; align-items:end; margin-bottom: var(--s-2);">
+        <div><div class="eyebrow">Coming up</div><h2 style="margin:0;">Next at Bethel.</h2></div>
+        <a href="/events/" class="link-tertiary">All events →</a>
+      </div>
+      <div style="display:grid; gap: var(--s-2); grid-template-columns: 1fr;">
+        {upcoming.map((ev) => (
+          <a href="/events/" class="card card-hover" style="display:flex; gap: var(--s-2); align-items:center; padding: var(--s-2);">
+            <div style="background: linear-gradient(135deg, var(--gold), var(--orange)); border-radius: var(--r-sm); padding: 10px 12px; text-align:center; flex-shrink:0; min-width: 60px;">
+              <div style="font-family: var(--font-display); font-weight: 800; font-size:1.3rem; color: var(--navy); line-height:1;">{new Date(ev.date+'T00:00:00').getDate()}</div>
+              <div style="font-size: 0.65rem; color: var(--navy); text-transform:uppercase; font-weight:700; opacity:0.75;">{new Date(ev.date+'T00:00:00').toLocaleDateString('en-KE', {month:'short'})}</div>
+            </div>
+            <div style="flex:1; min-width:0;">
+              <div style="font-weight:700; color: var(--navy); font-size:0.95rem;">{ev.title}</div>
+              <div style="font-size: var(--fs-xs); color: var(--text-muted);">{formatTime(ev.time)} · {ev.location}</div>
+            </div>
+            <span style="color: var(--orange); font-weight:600; font-size: var(--fs-sm);">→</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="band-navy reveal">
+    <div class="sunrise" aria-hidden="true"></div>
+    <div style="position:relative; z-index:1; display:grid; gap: var(--s-3); grid-template-columns: 1fr; align-items:center;">
+      <div>
+        <div class="eyebrow" style="color: var(--gold);">Give</div>
+        <h2 style="margin-bottom: 8px;">Your giving builds the kingdom.</h2>
+        <p style="max-width: 44ch;">Every gift goes to real work: reaching Athi River, caring for families, and building the church.</p>
+      </div>
+      <div style="display:flex; gap: var(--s-2); flex-wrap:wrap; align-items:center;">
+        <a href="/give/" class="btn btn-gold btn-lg">Give</a>
+        <button class="copy-btn" data-copy="5060995" aria-label="Copy Paybill number">Paybill 5060995 ⧉</button>
+      </div>
+    </div>
+  </section>
+</Layout>

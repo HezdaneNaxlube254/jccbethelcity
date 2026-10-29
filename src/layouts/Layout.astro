@@ -1,0 +1,63 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import MobileTabBar from '../components/MobileTabBar.astro';
+import '../styles/global.css';
+import site from '../data/site.json';
+
+interface Props { title: string; description: string; path: string; ogImage?: string; }
+const { title, description, path, ogImage = '/images/hero1.jpg' } = Astro.props;
+const canonical = new URL(path, Astro.site ?? 'https://jccbethelcity.org').toString();
+
+const jsonLd = {
+  '@context': 'https://schema.org', '@type': 'Church',
+  name: site.name, alternateName: site.network, url: canonical,
+  logo: new URL('/images/logo.png', Astro.site).toString(),
+  image: new URL(ogImage, Astro.site).toString(),
+  telephone: site.contact.phone, email: site.contact.email,
+  sameAs: [site.social.facebook, site.social.youtube],
+  address: { '@type': 'PostalAddress', addressLocality: 'Athi River', addressCountry: 'KE', addressRegion: 'Machakos', streetAddress: 'Athi River' },
+  geo: { '@type': 'GeoCoordinates', latitude: -1.4515, longitude: 36.9785 },
+  openingHoursSpecification: [
+    { '@type': 'OpeningHoursSpecification', dayOfWeek: 'Sunday', opens: '09:00', closes: '12:00' },
+    { '@type': 'OpeningHoursSpecification', dayOfWeek: 'Wednesday', opens: '18:00', closes: '20:00' },
+    { '@type': 'OpeningHoursSpecification', dayOfWeek: 'Friday', opens: '18:30', closes: '20:30' },
+  ],
+};
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#FAF8F3" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={new URL(ogImage, Astro.site).toString()} />
+    <meta property="og:site_name" content={site.name} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={new URL(ogImage, Astro.site).toString()} />
+    <link rel="icon" type="image/png" href="/images/logo.png" />
+    <link rel="apple-touch-icon" href="/images/logo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700;9..144,800&family=Inter:wght@400;500;600;700&display=swap" />
+    <link rel="preload" as="image" href="/images/hero1.jpg" fetchpriority="high" />
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <Header />
+    <main id="main"><slot /></main>
+    <Footer />
+    <MobileTabBar />
+    <script src="/src/scripts/main.js" type="module"></script>
+  </body>
+</html>

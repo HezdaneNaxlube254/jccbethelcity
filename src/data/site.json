@@ -1,0 +1,42 @@
+{
+  "name": "JCC Bethel City",
+  "network": "Jesus Celebration Centre",
+  "tagline": "Where Heaven Meets Athi River",
+  "tagline2": "Where everybody is somebody & Jesus is Lord",
+  "pastors": {
+    "senior": "Pst. Rodgers Silali",
+    "co": "Pastor Jacklyn Mucholwa-Silali"
+  },
+  "contact": {
+    "phone": "+254 796 316 316",
+    "phoneRaw": "+254796316316",
+    "whatsapp": "https://wa.me/254796316316",
+    "email": "info@jccbethelcity.org",
+    "address": "TODO_CONFIRM: full street address",
+    "plusCode": "H292+C98 Athi River",
+    "directions": "https://www.google.com/maps/dir/?api=1&destination=H292%2BC98+Athi+River",
+    "mapEmbed": "https://www.google.com/maps?q=H292%2BC98+Athi+River&output=embed"
+  },
+  "services": [
+    { "id": "sun", "day": "Sunday", "short": "Sun", "name": "Sunday Celebration", "time": "9:00 AM", "place": "Main Sanctuary", "icon": "sun" },
+    { "id": "wed", "day": "Wednesday", "short": "Wed", "name": "Life Class", "time": "6:00 PM", "place": "Main Sanctuary", "icon": "book" },
+    { "id": "fri", "day": "Friday", "short": "Fri", "name": "Prayer Night", "time": "6:30 PM", "place": "Prayer Chamber", "icon": "pray" }
+  ],
+  "giving": {
+    "paybill": "5060995",
+    "account": "Reason for Giving",
+    "reasons": ["Tithe", "Offering", "Building Fund", "Missions", "Welfare", "Other"]
+  },
+  "social": {
+    "facebook": "https://web.facebook.com/jcc.gimuchurch/photos",
+    "youtube": "https://youtu.be/CxQurstuLpU?si=r0jp8qR0bsRZ-5WW",
+    "youtubeVideoId": "CxQurstuLpU",
+    "youtubeChannelId": "TODO_CONFIRM: YouTube channel ID"
+  },
+  "history": { "founded": 2014, "firstSanctuary": 2016, "ministriesLaunched": 2019 },
+  "forms": {
+    "web3formsKey": "TODO_CONFIRM: web3forms access key",
+    "formspreeEndpoint": ""
+  },
+  "analytics": { "plausibleDomain": "" }
+}

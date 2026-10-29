@@ -1,0 +1,46 @@
+---
+import site from '../data/site.json';
+const year = new Date().getFullYear();
+---
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="brand" style="margin-bottom: var(--s-2);">
+          <img src="/images/logo.png" alt="" width="42" height="42" />
+          <div>
+            <div style="font-family: var(--font-display); color: #fff; font-size: 1.15rem; font-weight: 700;">JCC Bethel City</div>
+            <div style="font-size: 0.75rem; color: var(--text-inv-muted);">{site.tagline}</div>
+          </div>
+        </div>
+        <p style="font-size: 0.9rem; max-width: 32ch;">A family in Athi River where everybody is somebody and Jesus is Lord.</p>
+        <div class="social-row">
+          <a href={site.social.facebook} target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12c0-5.5-4.5-10-10-10S2 6.5 2 12c0 5 3.7 9.1 8.4 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.4h-1.2c-1.2 0-1.6.8-1.6 1.6V12h2.7l-.4 2.9h-2.3v7C18.3 21.1 22 17 22 12z"/></svg></a>
+          <a href={site.social.youtube} target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1c.5-1.9.5-5.8.5-5.8s0-3.9-.5-5.8zM9.5 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg></a>
+          <a href={site.contact.whatsapp} target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 3.5A11 11 0 0 0 3 16.5L2 22l5.5-1A11 11 0 0 0 22 12a11 11 0 0 0-1.5-8.5zm-8.5 17c-1.7 0-3.3-.5-4.7-1.3l-.3-.2-3.2.6.6-3.1-.2-.3A9 9 0 1 1 12 20.5z"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <div class="footer-links">
+          <a href="/about/">About us</a><a href="/visit/">Plan your visit</a><a href="/ministries/">Ministries</a>
+          <a href="/watch/">Watch</a><a href="/events/">Events</a><a href="/give/">Give</a><a href="/connect/">Connect</a>
+        </div>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <div class="footer-links">
+          <a href={`tel:${site.contact.phoneRaw}`}>{site.contact.phone}</a>
+          <a href={`mailto:${site.contact.email}`}>{site.contact.email}</a>
+          <a href={site.contact.directions} target="_blank" rel="noopener">Get directions</a>
+          <span style="color: var(--text-inv-muted); font-size: 0.9rem;">Athi River, Kenya</span>
+          <span style="color: var(--text-inv-muted); font-size: 0.9rem;">{site.contact.plusCode}</span>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; {year} {site.name}. All rights reserved.</span>
+      <span>Website by <a href="https://kayntech.netlify.app/" target="_blank" rel="noopener">Kayn Tech</a></span>
+    </div>
+  </div>
+</footer>
