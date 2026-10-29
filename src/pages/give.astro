@@ -1,0 +1,47 @@
+---
+import Layout from '../layouts/Layout.astro';
+import site from '../data/site.json';
+const steps = ['Open M-Pesa on your phone','Choose Lipa na M-Pesa → Paybill',`Business Number: ${site.giving.paybill}`,`Account Number: type what the gift is for (e.g. Tithe, Offering, Building Fund)`,'Enter the amount, then your M-Pesa PIN','You will receive an SMS confirmation — save it as your receipt'];
+---
+<Layout title="Give | JCC Bethel City, Athi River" description="Give securely to JCC Bethel City via M-Pesa Paybill 5060995. Your generosity fuels real ministry in Athi River." path="/give/">
+  <section class="section">
+    <div class="container" style="max-width: 760px;">
+      <div class="reveal">
+        <div class="eyebrow">Give</div>
+        <h1>Every gift matters.</h1>
+        <p class="text-muted">Giving is worship. Every shilling goes toward real ministry in Athi River — reaching people, caring for families, building the church.</p>
+      </div>
+      <div class="card reveal mt-4" style="padding: var(--s-4);">
+        <div class="eyebrow">M-Pesa Paybill</div>
+        <div style="display:flex; gap: var(--s-2); flex-wrap:wrap; align-items:center; margin: var(--s-2) 0 var(--s-3);">
+          <div>
+            <div style="font-size: var(--fs-xs); color: var(--text-muted); text-transform:uppercase; letter-spacing:0.08em; font-weight:600;">Paybill</div>
+            <div style="font-family: var(--font-display); font-weight:800; font-size:2.25rem; line-height:1; color: var(--navy);">{site.giving.paybill}</div>
+          </div>
+          <button class="copy-btn" data-copy={site.giving.paybill} aria-label="Copy Paybill">Copy ⧉</button>
+        </div>
+        <div>
+          <div style="font-size: var(--fs-xs); color: var(--text-muted); text-transform:uppercase; letter-spacing:0.08em; font-weight:600;">Account</div>
+          <div style="font-weight:700; color: var(--navy); font-size:1.15rem;">{site.giving.account}</div>
+          <div class="form-note">Type what the gift is for in the Account field.</div>
+        </div>
+        <div class="mt-3" style="display:flex; flex-wrap:wrap; gap: 8px;">
+          {site.giving.reasons.map((r) => (<button class="chip" data-copy={r} aria-label={`Copy ${r}`}>{r} ⧉</button>))}
+        </div>
+      </div>
+      <div class="reveal mt-4">
+        <h2>Step by step</h2>
+        <ol style="padding-left: 1.2em; color: var(--text-muted); font-size: var(--fs-sm);">{steps.map((s) => <li style="margin-bottom: 8px;">{s}</li>)}</ol>
+      </div>
+      <div class="card reveal mt-4" style="padding: var(--s-4); background: var(--surface-2);">
+        <h3 style="font-size:1.15rem; margin-bottom: 8px;">Bank transfer</h3>
+        <p class="text-muted" style="font-size: var(--fs-sm); margin-bottom: var(--s-2);">For bank transfers or recurring standing orders, request our details directly.</p>
+        <div style="display:flex; gap:8px; flex-wrap:wrap;">
+          <a href={`${site.contact.whatsapp}?text=${encodeURIComponent('Hi, I would like the JCC Bethel City bank transfer details.')}`} target="_blank" rel="noopener" class="btn btn-secondary">Request via WhatsApp</a>
+          <a href={`mailto:${site.contact.email}?subject=Bank%20Transfer%20Details`} class="btn btn-secondary">Email us</a>
+        </div>
+      </div>
+      <p class="form-note reveal mt-4" style="text-align:center;">All giving is secure. Receipts available on request — email <a href={`mailto:${site.contact.email}`} style="color: var(--navy); font-weight:600; border-bottom: 2px solid var(--gold);">{site.contact.email}</a>.</p>
+    </div>
+  </section>
+</Layout>

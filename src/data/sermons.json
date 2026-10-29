@@ -1,0 +1,22 @@
+{
+  "schema": {
+    "videoId": "YouTube video ID (11 chars)",
+    "title": "Sermon title",
+    "speaker": "Speaker name",
+    "series": "Series name or null",
+    "scripture": "Scripture reference",
+    "date": "ISO date YYYY-MM-DD",
+    "tags": ["sunday", "midweek"]
+  },
+  "sermons": [
+    {
+      "videoId": "CxQurstuLpU",
+      "title": "The Latest Message",
+      "speaker": "Pst. Rodgers Silali",
+      "series": null,
+      "scripture": "TODO_CONFIRM: scripture reference",
+      "date": "2025-01-01",
+      "tags": ["sunday"]
+    }
+  ]
+}

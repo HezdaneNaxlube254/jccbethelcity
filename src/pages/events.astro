@@ -1,0 +1,71 @@
+---
+import Layout from '../layouts/Layout.astro';
+import eventsData from '../data/events.json';
+import site from '../data/site.json';
+const now = new Date();
+const upcoming = eventsData.events.filter((e) => new Date(e.date + 'T' + e.time) >= now).sort((a, b) => new Date(a.date) - new Date(b.date));
+const categories = ['All', 'Prayer', 'Women', 'Men', 'Youth', 'Outreach'];
+function formatDate(d) { return new Date(d + 'T00:00:00').toLocaleDateString('en-KE', { weekday: 'short', month: 'short', day: 'numeric', year: 'numeric' }); }
+function formatTime(t) { const [h, m] = t.split(':').map(Number); return `${h % 12 || 12}:${String(m).padStart(2, '0')} ${h >= 12 ? 'PM' : 'AM'}`; }
+function gcalUrl(e) {
+  const start = `${e.date.replace(/-/g, '')}T${e.time.replace(':', '')}00`;
+  const end = e.endTime ? `${e.date.replace(/-/g, '')}T${e.endTime.replace(':', '')}00` : start;
+  const p = new URLSearchParams({ action: 'TEMPLATE', text: e.title, dates: `${start}/${end}`, details: e.description + ' JCC Bethel City', location: e.location });
+  return `https://calendar.google.com/calendar/render?${p}`;
+}
+function icsHref(e) {
+  const dt = (t) => e.date.replace(/-/g, '') + 'T' + t.replace(':', '') + '00';
+  const body = ['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//JCC Bethel City//Events//EN','BEGIN:VEVENT',`UID:${e.id}@jccbethelcity.org`,`DTSTAMP:${new Date().toISOString().replace(/[-:.]/g, '').slice(0, 15)}Z`,`DTSTART:${dt(e.time)}`,`DTEND:${dt(e.endTime || e.time)}`,`SUMMARY:${e.title}`,`DESCRIPTION:${e.description.replace(/\n/g, '\\n')}`,`LOCATION:${e.location}`,'END:VEVENT','END:VCALENDAR'].join('\r\n');
+  return 'data:text/calendar;charset=utf-8,' + encodeURIComponent(body);
+}
+---
+<Layout title="Events | JCC Bethel City, Athi River" description="Upcoming events at JCC Bethel City in Athi River — prayer nights, women's gatherings, outreach, and more. Add to your calendar in one tap." path="/events/">
+  <section class="section">
+    <div class="container">
+      <div class="reveal" style="text-align:center; margin-bottom: var(--s-4);">
+        <div class="eyebrow">What's happening</div>
+        <h1>Come and see.</h1>
+        <p class="text-muted" style="max-width:56ch; margin: 0 auto;">Everything at Bethel, on one page. Weekly services plus special gatherings.</p>
+      </div>
+      <div data-filter-group data-filter-target="event" class="reveal">
+        <div class="chips" style="justify-content:center; margin-bottom: var(--s-3);">
+          {categories.map((c, i) => (<button class="chip" data-filter={c === 'All' ? 'all' : c} aria-pressed={i === 0 ? 'true' : 'false'}>{c}</button>))}
+        </div>
+        <div style="display:grid; gap: var(--s-2); grid-template-columns: 1fr; max-width: 820px; margin: 0 auto;">
+          {upcoming.length === 0 && <div class="card" style="text-align:center; padding: var(--s-5);"><p class="text-muted">No upcoming events yet. Check back soon.</p></div>}
+          {upcoming.map((e) => (
+            <article class="card" data-filter-item="event" data-tags={e.category} style="display:flex; gap: var(--s-3); flex-wrap:wrap; align-items:flex-start;">
+              <img src={e.image} alt="" width="200" height="200" loading="lazy" style="width:120px; height:120px; object-fit:cover; border-radius: var(--r); flex-shrink:0;" />
+              <div style="flex:1; min-width: 220px;">
+                {e.sample && <span style="font-size:10px; background: var(--surface-2); color: var(--text-muted); padding:2px 8px; border-radius: 4px; font-weight:700; letter-spacing:0.05em;">SAMPLE EVENT</span>}
+                <h3 style="margin: 6px 0 4px; font-size:1.2rem;">{e.title}</h3>
+                <div class="text-muted" style="font-size: var(--fs-xs); margin-bottom: 8px;">{formatDate(e.date)} · {formatTime(e.time)} · {e.category}</div>
+                <p class="text-muted" style="font-size: var(--fs-sm); margin-bottom: var(--s-2);">{e.description}</p>
+                <div style="display:flex; gap:8px; flex-wrap:wrap;">
+                  <a class="btn btn-secondary btn-sm" href={gcalUrl(e)} target="_blank" rel="noopener">Add to Google</a>
+                  <a class="btn btn-secondary btn-sm" href={icsHref(e)} download={`${e.id}.ics`}>Download .ics</a>
+                  <a class="btn btn-primary btn-sm" href={`/connect/?type=volunteer&event=${encodeURIComponent(e.title)}`}>Register</a>
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section-tight">
+    <div class="container">
+      <div class="reveal">
+        <h2>Weekly services</h2>
+        <div class="services" style="margin-top: var(--s-3);">
+          {site.services.map((s) => (
+            <div class="service">
+              <div class="svc-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+              <div><div class="svc-name">{s.name}</div><div class="svc-time">{s.time}</div><div class="svc-place">{s.day} · {s.place}</div></div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

@@ -1,0 +1,85 @@
+---
+import Layout from '../layouts/Layout.astro';
+import site from '../data/site.json';
+const steps = [
+  { n: 1, title: 'Arrive', body: 'Come as you are — casual clothes welcome. Ushers meet you at the gate with a smile.' },
+  { n: 2, title: 'Worship', body: 'Live music and heartfelt praise. Sit anywhere; you will not be singled out.' },
+  { n: 3, title: 'The Word', body: 'A clear, scripture-grounded message you can actually apply on Monday.' },
+  { n: 4, title: 'Connect', body: 'Meet a pastor, join a small group, or just say hi over tea. No pressure.' },
+];
+const faqs = [
+  { q: 'What should I wear?', a: 'Anything that feels right. We care about your heart, not your outfit.' },
+  { q: 'Where do I park?', a: 'Free parking is available on the church grounds. Ushers will guide you to a spot.' },
+  { q: 'Is there something for my kids?', a: 'Yes — Sunday School for ages 3 to 12 runs during the main service, with trained, caring teachers.' },
+  { q: 'How long does the service last?', a: 'Sunday Celebration runs about two hours. Time is confirmed weekly — contact us if you need exact end time.' },
+  { q: 'Will I be asked for money?', a: 'Only an opportunity to give is offered — you are never required to give. First-time visitors are our guests.' },
+  { q: 'Do you have a mid-week service?', a: 'Wednesday Life Class at 6:00 PM and Friday Prayer Night at 6:30 PM in the Prayer Chamber.' },
+];
+---
+<Layout title="Plan Your Visit | JCC Bethel City, Athi River" description="Visiting JCC Bethel City in Athi River? Here is what to expect, service times, directions, parking and a quick form to let us welcome you." path="/visit/">
+  <section class="section">
+    <div class="container" style="max-width: 820px;">
+      <div class="reveal">
+        <div class="eyebrow">New here?</div>
+        <h1>We can't wait to meet you.</h1>
+        <p class="text-muted" style="max-width: 60ch;">No pressure, no spotlight — just a warm welcome. Fill in the short form and our team will look out for you on Sunday.</p>
+      </div>
+      <div class="card reveal mt-4" style="padding: var(--s-4);">
+        <h2 style="font-size:1.5rem;">I'm coming this Sunday</h2>
+        <form data-form="visit" data-endpoint="https://api.web3forms.com/submit" data-key={site.forms.web3formsKey}>
+          <input class="honeypot" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" />
+          <div class="field"><label for="v-name">Your name</label><input id="v-name" name="name" type="text" required autocomplete="name" /></div>
+          <div class="field"><label for="v-phone">Phone / WhatsApp</label><input id="v-phone" name="phone" type="tel" required autocomplete="tel" /></div>
+          <div class="field"><label for="v-people">How many are coming?</label><input id="v-people" name="people" type="number" min="1" max="20" value="1" /></div>
+          <div class="field">
+            <label for="v-service">Which service?</label>
+            <select id="v-service" name="service">
+              {site.services.map((s) => <option value={s.name + ' ' + s.time}>{s.name} — {s.day} {s.time}</option>)}
+            </select>
+          </div>
+          <div class="form-note">We respect your privacy — your details are only used to welcome you.</div>
+          <div style="display:flex; gap: var(--s-2); flex-wrap:wrap; margin-top: var(--s-3);">
+            <button type="submit" class="btn btn-primary">Send & let us know</button>
+            <a href={`${site.contact.whatsapp}?text=${encodeURIComponent("Hi JCC Bethel City! I'm planning to visit this Sunday. My name is ")}`} target="_blank" rel="noopener" class="btn btn-secondary">or WhatsApp us</a>
+          </div>
+          <div class="form-msg" role="status" aria-live="polite"></div>
+        </form>
+      </div>
+    </div>
+  </section>
+  <section class="section-tight">
+    <div class="container">
+      <div class="reveal"><div class="eyebrow">What to expect</div><h2>Four simple steps.</h2></div>
+      <div class="bento reveal" style="margin-top: var(--s-3);">
+        {steps.map((s) => (
+          <div class="card">
+            <div style="width:36px; height:36px; border-radius:50%; background: var(--gold); color: var(--navy); display:grid; place-items:center; font-weight:800; font-family:var(--font-display); margin-bottom: var(--s-2);">{s.n}</div>
+            <h3 style="font-size:1.1rem;">{s.title}</h3>
+            <p class="text-muted" style="font-size: var(--fs-sm);">{s.body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+  <section class="section-tight">
+    <div class="container">
+      <div class="reveal"><div class="eyebrow">Common questions</div><h2>Good to know.</h2></div>
+      <div class="reveal" style="margin-top: var(--s-3); max-width: 720px;">
+        {faqs.map((f) => (<details class="acc"><summary>{f.q}</summary><p>{f.a}</p></details>))}
+      </div>
+    </div>
+  </section>
+  <section class="section-tight">
+    <div class="container">
+      <div class="reveal card" style="overflow:hidden; padding:0;">
+        <div style="aspect-ratio: 16/9; background: var(--surface-2);">
+          <iframe src={site.contact.mapEmbed} title="JCC Bethel City location" loading="lazy" referrerpolicy="no-referrer-when-downgrade" style="width:100%; height:100%; border:0;"></iframe>
+        </div>
+        <div style="padding: var(--s-3); display:flex; justify-content:space-between; gap: var(--s-2); flex-wrap:wrap; align-items:center;">
+          <div><div style="font-weight:700; color: var(--navy);">{site.contact.plusCode}</div><div style="font-size: var(--fs-xs); color: var(--text-muted);">Athi River, Kenya</div></div>
+          <a href={site.contact.directions} target="_blank" rel="noopener" class="btn btn-primary">Get Directions</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

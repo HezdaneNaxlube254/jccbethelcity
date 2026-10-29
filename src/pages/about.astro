@@ -1,0 +1,79 @@
+---
+import Layout from '../layouts/Layout.astro';
+import site from '../data/site.json';
+const milestones = [
+  { year: 2014, title: 'The vision', body: 'Pst. Rodgers Silali receives the call to plant a church in Athi River.' },
+  { year: 2016, title: 'First sanctuary', body: 'The church opens its first dedicated home in Athi River.' },
+  { year: 2019, title: 'Ministries launched', body: 'Six ministries are established to serve every season of life.' },
+  { year: new Date().getFullYear(), title: 'Today', body: 'A growing family, still rooted in prayer and the Word.' },
+];
+const values = [
+  { t: 'Prayer', d: 'We do nothing without Him.' },
+  { t: 'The Word', d: 'Scripture is our compass.' },
+  { t: 'Family', d: 'Nobody walks alone.' },
+  { t: 'Generosity', d: 'We give because He gave.' },
+];
+---
+<Layout title="About | JCC Bethel City, Athi River" description="Learn about JCC Bethel City in Athi River — our story, leaders, values, and our place in the Jesus Celebration Centre network." path="/about/">
+  <section class="section">
+    <div class="container">
+      <div class="reveal" style="text-align:center; margin-bottom: var(--s-4);">
+        <div class="eyebrow">Our story</div>
+        <h1>Rooted in Athi River.</h1>
+        <p class="text-muted" style="max-width:56ch; margin: 0 auto;">A family of believers, part of the Jesus Celebration Centre network, praying for our city since 2014.</p>
+      </div>
+
+      <div class="reveal" style="margin-bottom: var(--s-5);">
+        <div style="display:grid; gap: var(--s-2); grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
+          {milestones.map((m) => (
+            <div class="card card-hover">
+              <div style="font-family: var(--font-display); font-weight:800; font-size:2rem; color: var(--gold); line-height:1;">{m.year}</div>
+              <div style="font-weight:700; color: var(--navy); margin: 6px 0 4px;">{m.title}</div>
+              <div style="font-size: var(--fs-sm); color: var(--text-muted);">{m.body}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div class="reveal">
+        <h2>Our leaders</h2>
+        <div style="display:grid; gap: var(--s-2); grid-template-columns: 1fr; margin-top: var(--s-2);">
+          <div class="card card-hover" style="display:flex; gap: var(--s-3); align-items:center; flex-wrap:wrap;">
+            <img src="/images/pastor-rodgers.jpg" alt="Pst. Rodgers Silali" width="120" height="120" loading="lazy" style="width:100px; height:100px; border-radius:50%; object-fit:cover; flex-shrink:0; border: 3px solid var(--gold);" />
+            <div>
+              <div style="font-weight:700; color: var(--navy); font-size:1.15rem;">{site.pastors.senior}</div>
+              <div style="color: var(--orange); font-size: var(--fs-sm); font-weight:600;">Senior Pastor</div>
+            </div>
+          </div>
+          <div class="card card-hover" style="display:flex; gap: var(--s-3); align-items:center; flex-wrap:wrap;">
+            <img src="/images/pastor-jacklyn.jpg" alt="Pastor Jacklyn Mucholwa-Silali" width="120" height="120" loading="lazy" style="width:100px; height:100px; border-radius:50%; object-fit:cover; flex-shrink:0; border: 3px solid var(--gold);" />
+            <div>
+              <div style="font-weight:700; color: var(--navy); font-size:1.15rem;">{site.pastors.co}</div>
+              <div style="color: var(--orange); font-size: var(--fs-sm); font-weight:600;">Pastor</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal" style="margin-top: var(--s-5);">
+        <h2>What we believe</h2>
+        <div style="display:grid; gap: var(--s-2); grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); margin-top: var(--s-2);">
+          {values.map((v) => (
+            <div class="card card-hover">
+              <div style="font-family: var(--font-display); font-weight:700; color: var(--navy); font-size:1.15rem;">{v.t}</div>
+              <div style="font-size: var(--fs-sm); color: var(--text-muted); margin-top:4px;">{v.d}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div class="band-navy reveal" style="margin-top: var(--s-5);">
+        <div style="position:relative; z-index:1;">
+          <div class="eyebrow" style="color: var(--gold);">JCC Network</div>
+          <h2 style="margin-bottom: 8px;">Part of something bigger.</h2>
+          <p style="max-width:52ch;">JCC Bethel City is one church in the Jesus Celebration Centre family — a network of Spirit-filled churches across Kenya.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

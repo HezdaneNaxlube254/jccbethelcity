@@ -1,0 +1,59 @@
+---
+import Layout from '../layouts/Layout.astro';
+import site from '../data/site.json';
+const types = [{ id: 'message', label: 'Message' }, { id: 'prayer', label: 'Prayer' }, { id: 'volunteer', label: 'Volunteer' }];
+const params = Astro.url.searchParams;
+const initial = params.get('type') || 'message';
+const presetMinistry = params.get('ministry') || '';
+const presetEvent = params.get('event') || '';
+---
+<Layout title="Connect | JCC Bethel City, Athi River" description="Get in touch with JCC Bethel City in Athi River. Send a message, submit a prayer request, or volunteer with a ministry." path="/connect/">
+  <section class="section">
+    <div class="container" style="max-width: 760px;">
+      <div class="reveal"><div class="eyebrow">Connect</div><h1>We'd love to hear from you.</h1><p class="text-muted">Pick what fits below — one form, real people reading it.</p></div>
+      <div class="chips reveal" style="margin-top: var(--s-3);">
+        {types.map((t) => (<button class="chip" data-tab={t.id} aria-pressed={t.id === initial ? 'true' : 'false'}>{t.label}</button>))}
+      </div>
+      <form data-form="message" data-endpoint="https://api.web3forms.com/submit" data-key={site.forms.web3formsKey} class="card reveal mt-3" style="padding: var(--s-4); display: {initial === 'message' ? 'block' : 'none'};">
+        <input class="honeypot" type="text" name="website" tabindex="-1" aria-hidden="true" />
+        <input type="hidden" name="subject" value="Website: Message" />
+        <div class="field"><label for="m-name">Your name</label><input id="m-name" name="name" type="text" required autocomplete="name" /></div>
+        <div class="field"><label for="m-email">Email</label><input id="m-email" name="email" type="email" required autocomplete="email" /></div>
+        <div class="field"><label for="m-phone">Phone (optional)</label><input id="m-phone" name="phone" type="tel" autocomplete="tel" /></div>
+        <div class="field"><label for="m-message">Message</label><textarea id="m-message" name="message" required></textarea></div>
+        <button type="submit" class="btn btn-primary">Send message</button>
+        <div class="form-msg" role="status" aria-live="polite"></div>
+      </form>
+      <form data-form="prayer" data-endpoint="https://api.web3forms.com/submit" data-key={site.forms.web3formsKey} class="card reveal mt-3" style="padding: var(--s-4); display: {initial === 'prayer' ? 'block' : 'none'};">
+        <input class="honeypot" type="text" name="website" tabindex="-1" aria-hidden="true" />
+        <input type="hidden" name="subject" value="Website: Prayer Request" />
+        <div class="field"><label for="p-name">Your name (optional)</label><input id="p-name" name="name" type="text" autocomplete="name" /></div>
+        <div class="field"><label for="p-email">Email (optional)</label><input id="p-email" name="email" type="email" autocomplete="email" /></div>
+        <div class="field"><label for="p-request">How can we pray for you?</label><textarea id="p-request" name="request" required></textarea><div class="form-note">Prayer requests are seen only by our pastoral team. Never shared without your permission.</div></div>
+        <button type="submit" class="btn btn-primary">Send prayer request</button>
+        <div class="form-msg" role="status" aria-live="polite"></div>
+      </form>
+      <form data-form="volunteer" data-endpoint="https://api.web3forms.com/submit" data-key={site.forms.web3formsKey} class="card reveal mt-3" style="padding: var(--s-4); display: {initial === 'volunteer' ? 'block' : 'none'};">
+        <input class="honeypot" type="text" name="website" tabindex="-1" aria-hidden="true" />
+        <input type="hidden" name="subject" value="Website: Volunteer" />
+        <input type="hidden" name="ministry" value={presetMinistry} />
+        <input type="hidden" name="event" value={presetEvent} />
+        <div class="field"><label for="v-name2">Your name</label><input id="v-name2" name="name" type="text" required autocomplete="name" /></div>
+        <div class="field"><label for="v-email2">Email</label><input id="v-email2" name="email" type="email" required autocomplete="email" /></div>
+        <div class="field"><label for="v-phone2">Phone</label><input id="v-phone2" name="phone" type="tel" required autocomplete="tel" /></div>
+        <div class="field"><label for="v-interest">What would you like to help with?</label><select id="v-interest" name="interest"><option>Sunday School</option><option>Praise & Worship</option><option>Welfare</option><option>Dorcas</option><option>Ushering</option><option>Media & Tech</option><option>Other</option></select></div>
+        <div class="field"><label for="v-note">Anything else?</label><textarea id="v-note" name="notes"></textarea></div>
+        <button type="submit" class="btn btn-primary">Send</button>
+        <div class="form-msg" role="status" aria-live="polite"></div>
+      </form>
+      <div class="card reveal mt-4" style="padding: var(--s-3);">
+        <h3 style="font-size:1rem; margin-bottom: var(--s-2);">Or reach us directly</h3>
+        <div style="display:grid; gap: 8px; font-size: var(--fs-sm);">
+          <a href={`tel:${site.contact.phoneRaw}`} style="color: var(--navy); font-weight:600;">📞 {site.contact.phone}</a>
+          <a href={site.contact.whatsapp} target="_blank" rel="noopener" style="color: var(--navy); font-weight:600;">💬 WhatsApp</a>
+          <a href={`mailto:${site.contact.email}`} style="color: var(--navy); font-weight:600;">✉️ {site.contact.email}</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

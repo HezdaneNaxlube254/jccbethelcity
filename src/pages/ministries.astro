@@ -1,0 +1,54 @@
+---
+import Layout from '../layouts/Layout.astro';
+const ministries = [
+  { id: 'women', title: 'Women', desc: 'A sisterhood of women growing in prayer, purpose and identity.', leader: 'Pastor Jacklyn Mucholwa-Silali', meets: 'Second Saturday monthly', img: '/images/ministry-women.jpg' },
+  { id: 'men', title: 'Men', desc: 'Men pursuing Christ together — in the home, at work, in the church.', leader: 'Pst. Rodgers Silali', meets: 'First Saturday monthly', img: '/images/ministry-men.jpg' },
+  { id: 'youth', title: 'Youth', desc: 'Next-generation believers discovering their purpose in Christ.', leader: 'TODO_CONFIRM: Youth Leader', meets: 'TODO_CONFIRM: meeting time', img: '/images/ministry-youth.jpg' },
+  { id: 'welfare', title: 'Welfare', desc: 'Practical, dignified support for families in crisis.', leader: 'Welfare Committee', meets: 'Serves ongoing', img: '/images/ministry-welfare.jpg' },
+  { id: 'dorcas', title: 'Dorcas', desc: 'Hands-on compassion — meals, visits, care packages, and more.', leader: 'Dorcas Team', meets: 'Wednesdays', img: '/images/ministry-dorcas.jpg' },
+  { id: 'worship', title: 'Praise & Worship', desc: 'The Voice of Triumph choir and worship team.', leader: 'Worship Director', meets: 'Friday rehearsal', img: '/images/ministry-worship.jpg' },
+  { id: 'sundayschool', title: 'Sunday School', desc: 'Faith-building for children, ages 3 to 12.', leader: 'Sunday School Team', meets: 'Sundays, 9 AM', img: '/images/ministry-sundayschool.jpg' },
+];
+---
+<Layout title="Ministries | JCC Bethel City, Athi River" description="Seven ministries at JCC Bethel City, Athi River — Women, Men, Youth, Welfare, Dorcas, Praise & Worship, and Sunday School. Find your place to belong and serve." path="/ministries/">
+  <section class="section">
+    <div class="container">
+      <div class="reveal" style="text-align:center; margin-bottom: var(--s-3);">
+        <div class="eyebrow">Belong</div>
+        <h1>A place to belong.</h1>
+        <p class="text-muted" style="max-width:56ch; margin: 0 auto;">Seven ministries, one family. Tap a card to learn more and join.</p>
+      </div>
+      <div class="ministry-grid reveal">
+        {ministries.map((m) => (
+          <button class="card card-hover card-media" data-ministry={m.id} style="text-align:left; border:none; cursor:pointer; background: var(--surface);" aria-label={`Open ${m.title} details`}>
+            <img src={m.img} alt="" width="400" height="300" loading="lazy" />
+            <div class="card-body">
+              <div class="card-title">{m.title}</div>
+              <div class="card-sub">{m.desc}</div>
+              <span class="card-cta">Learn more →</span>
+            </div>
+          </button>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <div class="drawer-backdrop" id="drawer-backdrop"></div>
+  <aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-label="Ministry details">
+    <button class="drawer-close" aria-label="Close"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
+    <img data-img src="" alt="" style="width:100%; border-radius: var(--r-lg); aspect-ratio: 16/9; object-fit:cover; margin-bottom: var(--s-3);" />
+    <h2 data-title style="font-size:1.5rem; margin-bottom: var(--s-2);">—</h2>
+    <p data-desc class="text-muted" style="margin-bottom: var(--s-3); font-size: var(--fs-sm);">—</p>
+    <div style="display:grid; gap:8px; font-size: var(--fs-sm); margin-bottom: var(--s-3);">
+      <div><strong>Leader:</strong> <span data-leader>—</span></div>
+      <div><strong>Meets:</strong> <span data-meets>—</span></div>
+    </div>
+    <div style="display:flex; gap:8px; flex-wrap:wrap;">
+      <a data-join href="/connect/" class="btn btn-primary">Join this ministry</a>
+      <a href="/connect/?type=volunteer" class="btn btn-secondary">Volunteer</a>
+    </div>
+  </aside>
+  <script is:inline set:html={`
+    window.__MINISTRIES__ = ${JSON.stringify(Object.fromEntries(ministries.map((m) => [m.id, { title: m.title, description: m.desc, leader: m.leader, meets: m.meets, image: m.img }])))};
+  `}></script>
+</Layout>

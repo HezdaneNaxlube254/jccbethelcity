@@ -1,0 +1,26 @@
+---
+const nav = [
+  { href: '/about/', label: 'About' },
+  { href: '/watch/', label: 'Watch' },
+  { href: '/ministries/', label: 'Ministries' },
+  { href: '/events/', label: 'Events' },
+  { href: '/give/', label: 'Give' },
+];
+const path = Astro.url.pathname;
+const isActive = (href: string) => path === href || path === href.replace(/\/$/, '');
+---
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="/" aria-label="JCC Bethel City home">
+      <img src="/images/logo.png" alt="" width="46" height="46" />
+      <div>
+        <div class="brand-name">JCC Bethel City</div>
+        <div class="brand-sub">Athi River</div>
+      </div>
+    </a>
+    <nav class="nav-desktop" aria-label="Primary">
+      {nav.map((l) => <a href={l.href} aria-current={isActive(l.href) ? 'page' : undefined}>{l.label}</a>)}
+    </nav>
+    <a class="btn btn-primary header-cta" href="/visit/">New Here?</a>
+  </div>
+</header>
