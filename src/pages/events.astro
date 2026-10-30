@@ -7,19 +7,40 @@ const now = new Date();
 const upcoming = eventsData.events.filter((e) => new Date(e.date + 'T' + e.time) >= now).sort((a, b) => new Date(a.date) - new Date(b.date));
 const categories = ['All', 'Prayer', 'Women', 'Men', 'Youth', 'Outreach', 'Conference'];
 
-function formatDate(d) { return new Date(d + 'T00:00:00').toLocaleDateString('en-KE', { weekday: 'short', month: 'short', day: 'numeric', year: 'numeric' }); }
+// Updates the display to show ranges
+function formatDateRange(e) {
+  const start = new Date(e.date + 'T00:00:00');
+  const startStr = start.toLocaleDateString('en-KE', { month: 'short', day: 'numeric' });
+  
+  if (e.endDate) {
+    const end = new Date(e.endDate + 'T00:00:00');
+    const endStr = end.toLocaleDateString('en-KE', { month: 'short', day: 'numeric', year: 'numeric' });
+    return `${startStr} – ${endStr}`;
+  }
+  return start.toLocaleDateString('en-KE', { month: 'short', day: 'numeric', year: 'numeric' });
+}
+
 function formatTime(t) { const [h, m] = t.split(':').map(Number); return `${h % 12 || 12}:${String(m).padStart(2, '0')} ${h >= 12 ? 'PM' : 'AM'}`; }
 
+// Updates Google Calendar URL to span multiple days
 function gcalUrl(e) {
   const start = `${e.date.replace(/-/g, '')}T${e.time.replace(':', '')}00`;
-  const end = e.endTime ? `${e.date.replace(/-/g, '')}T${e.endTime.replace(':', '')}00` : start;
-  const p = new URLSearchParams({ action: 'TEMPLATE', text: e.title, dates: `${start}/${end}`, details: e.description + ' JCC Bethel City', location: e.location });
+  const end = `${(e.endDate || e.date).replace(/-/g, '')}T${(e.endTime || e.time).replace(':', '')}00`;
+  const p = new URLSearchParams({ 
+    action: 'TEMPLATE', 
+    text: e.title, 
+    dates: `${start}/${end}`, 
+    details: e.description + '\n\nJCC Bethel City', 
+    location: e.location 
+  });
   return `https://calendar.google.com/calendar/render?${p}`;
 }
 
+// Updates .ics to span multiple days
 function icsHref(e) {
-  const dt = (t) => e.date.replace(/-/g, '') + 'T' + t.replace(':', '') + '00';
-  // Create absolute URL for the calendar attachment
+  const dt = (d, t) => d.replace(/-/g, '') + 'T' + t.replace(':', '') + '00';
+  const start = dt(e.date, e.time);
+  const end = dt(e.endDate || e.date, e.endTime || e.time);
   const imageUrl = `https://jccbethelcity.netlify.app${e.image}`;
   
   const body = [
@@ -29,12 +50,12 @@ function icsHref(e) {
     'BEGIN:VEVENT',
     `UID:${e.id}@jccbethelcity.org`,
     `DTSTAMP:${new Date().toISOString().replace(/[-:.]/g, '').slice(0, 15)}Z`,
-    `DTSTART:${dt(e.time)}`,
-    `DTEND:${dt(e.endTime || e.time)}`,
+    `DTSTART:${start}`,
+    `DTEND:${end}`,
     `SUMMARY:${e.title}`,
     `DESCRIPTION:${e.description.replace(/\n/g, '\\n')}`,
     `LOCATION:${e.location}`,
-    `ATTACH;FMTTYPE=image/jpeg:${imageUrl}`, // Embeds banner in calendar apps
+    `ATTACH;FMTTYPE=image/jpeg:${imageUrl}`,
     'END:VEVENT',
     'END:VCALENDAR'
   ].join('\r\n');
@@ -65,7 +86,7 @@ function icsHref(e) {
                 {e.sample && <span style="font-size:10px; background: var(--surface-2); color: var(--text-muted); padding:2px 8px; border-radius: 4px; font-weight:700; letter-spacing:0.05em;">SAMPLE EVENT</span>}
                 <h3 style="margin: 6px 0 4px; font-size:1.4rem;">{e.title}</h3>
                 <div class="text-muted" style="font-size: var(--fs-xs); margin-bottom: 8px; font-weight: 600;">
-                  {formatDate(e.date)} · {formatTime(e.time)} · <span style="color: var(--orange);">{e.category}</span>
+                  {formatDateRange(e)} · {formatTime(e.time)} · <span style="color: var(--orange);">{e.category}</span>
                 </div>
                 <p class="text-muted" style="font-size: var(--fs-sm); margin-bottom: var(--s-3);">{e.description}</p>
                 <div style="display:flex; gap:8px; flex-wrap:wrap;">

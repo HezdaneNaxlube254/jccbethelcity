@@ -3,7 +3,8 @@
     {
       "id": "youth-ablaze-2026",
       "title": "Annual Youth Ablaze Conference",
-      "date": "2026-11-13",
+      "date": "2026-11-23",
+      "endDate": "2026-11-27",
       "time": "09:00",
       "endTime": "17:00",
       "location": "Maturity Centre, Machakos",
@@ -15,7 +16,8 @@
     {
       "id": "word-explosion-2026",
       "title": "Word Explosion",
-      "date": "2026-12-04",
+      "date": "2026-11-30",
+      "endDate": "2026-12-06",
       "time": "09:00",
       "endTime": "17:00",
       "location": "JCC Mombasa",
