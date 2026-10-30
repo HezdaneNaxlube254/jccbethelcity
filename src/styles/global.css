@@ -128,9 +128,9 @@ p { margin: 0 0 var(--s-2); }
 .tabbar a[aria-current="page"] { color: var(--gold); }
 
 /* ===== Hero ===== */
-.hero { position: relative; min-height: 78svh; display: flex; align-items: flex-end; color: #fff; overflow: hidden; border-radius: var(--r-lg); margin: var(--s-3) var(--s-3) 0; max-width: 1180px; margin-left: auto; margin-right: auto; }
+.hero { position: relative; min-height: 78svh; display: flex; align-items: flex-end; color: #fff; overflow: hidden; border-radius: var(--r-lg); margin: var(--s-3) var(--s-3) 0; max-width: 1180px; margin-left: auto; margin-right: auto; background: var(--navy); }
 @media (max-width: 767px) { .hero { min-height: 72svh; margin: 0; border-radius: 0; } }
-.hero-slide { opacity: 0; transition: opacity 1s ease-in-out; }
+.hero-slide { position: absolute; inset: 0; background-size: cover; background-position: center; opacity: 0; transition: opacity 1s ease-in-out; }
 .hero-slide.active { opacity: 1; z-index: 1; }
 .hero-content { position: relative; z-index: 2; padding: var(--s-5) var(--s-4) var(--s-4); width: 100%; }
 @media (max-width: 767px) { .hero-content { padding: var(--s-4) var(--s-3); } }

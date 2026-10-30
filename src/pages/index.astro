@@ -24,11 +24,11 @@ function formatTime(t) { const [h, m] = t.split(':').map(Number); return `${h % 
 ---
 <Layout title="JCC Bethel City | Home of World Changers — Athi River" description="JCC Bethel City is a Spirit-filled church in Athi River, Kenya — home of world changers. Sunday services, Bible Focus, Overnight Prayers. Plan your visit today." path="/">
   
-  <!-- HERO SECTION WITH CORRECT IMAGES AND ORDER -->
+  <!-- HERO SECTION (Clean HTML, using CSS classes) -->
   <section class="hero reveal" id="hero-rotating">
-    <div class="hero-slide active" style="position:absolute; inset:0; background-image:url('/images/hero-home.jpg'); background-size:cover; background-position:center; transition: opacity 1s;"></div>
-    <div class="hero-slide" style="position:absolute; inset:0; background-image:url('/images/hero3.jpg'); background-size:cover; background-position:center; opacity:0; transition: opacity 1s;"></div>
-    <div class="hero-slide" style="position:absolute; inset:0; background-image:url('/images/hero2.jpg'); background-size:cover; background-position:center; opacity:0; transition: opacity 1s;"></div>
+    <div class="hero-slide active" style="background-image:url('/images/hero-home.jpg');"></div>
+    <div class="hero-slide" style="background-image:url('/images/hero3.jpg');"></div>
+    <div class="hero-slide" style="background-image:url('/images/hero2.jpg');"></div>
     <div class="hero-bg" style="position:absolute; inset:0; background:linear-gradient(180deg, rgba(7,11,36,0.35) 0%, rgba(7,11,36,0.85) 100%); z-index:1;"></div>
     <div class="sunrise" aria-hidden="true"></div>
     <div class="hero-content">
@@ -75,7 +75,6 @@ function formatTime(t) { const [h, m] = t.split(':').map(Number); return `${h % 
   <section class="section-tight">
     <div class="container">
       <div class="bento reveal">
-        <!-- FIXED TEXT -->
         <div class="card card-hover card-feature bento-wide">
           <div>
             <div class="eyebrow">Our Family</div>
