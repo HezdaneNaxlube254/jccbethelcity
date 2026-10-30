@@ -24,11 +24,11 @@ function formatTime(t) { const [h, m] = t.split(':').map(Number); return `${h % 
 ---
 <Layout title="JCC Bethel City | Home of World Changers — Athi River" description="JCC Bethel City is a Spirit-filled church in Athi River, Kenya — home of world changers. Sunday services, Bible Focus, Overnight Prayers. Plan your visit today." path="/">
   
-  <!-- HERO SECTION WITH FIXED IMAGE PATHS -->
+  <!-- HERO SECTION WITH CORRECT IMAGES AND ORDER -->
   <section class="hero reveal" id="hero-rotating">
     <div class="hero-slide active" style="position:absolute; inset:0; background-image:url('/images/hero-home.jpg'); background-size:cover; background-position:center; transition: opacity 1s;"></div>
-    <div class="hero-slide" style="position:absolute; inset:0; background-image:url('/images/fam1.jpg'); background-size:cover; background-position:center; opacity:0; transition: opacity 1s;"></div>
     <div class="hero-slide" style="position:absolute; inset:0; background-image:url('/images/hero3.jpg'); background-size:cover; background-position:center; opacity:0; transition: opacity 1s;"></div>
+    <div class="hero-slide" style="position:absolute; inset:0; background-image:url('/images/hero2.jpg'); background-size:cover; background-position:center; opacity:0; transition: opacity 1s;"></div>
     <div class="hero-bg" style="position:absolute; inset:0; background:linear-gradient(180deg, rgba(7,11,36,0.35) 0%, rgba(7,11,36,0.85) 100%); z-index:1;"></div>
     <div class="sunrise" aria-hidden="true"></div>
     <div class="hero-content">
@@ -45,13 +45,11 @@ function formatTime(t) { const [h, m] = t.split(':').map(Number); return `${h % 
     </div>
   </section>
 
-  <!-- THE CONFESSION CARD (Beautifully styled) -->
+  <!-- THE CONFESSION CARD -->
   <section class="section-tight reveal">
     <div class="container">
       <div class="card" style="background: linear-gradient(135deg, var(--surface), var(--surface-2)); border: 2px solid var(--gold); border-radius: var(--r-lg); padding: var(--s-4); text-align: center; box-shadow: var(--shadow); position: relative; overflow: hidden;">
-        <!-- Subtle background cross or glow can go here -->
         <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 150px; color: rgba(245,197,24,0.05); font-family: var(--font-display); pointer-events: none;">†</div>
-        
         <div class="eyebrow" style="color: var(--orange); font-size: 0.85rem; letter-spacing: 0.2em; position: relative; z-index: 1;">Our Confession</div>
         <p style="font-family: var(--font-display); font-size: 1.35rem; line-height: 1.6; color: var(--navy); margin: 0 0 var(--s-3); font-style: italic; max-width: 780px; margin-left: auto; margin-right: auto; position: relative; z-index: 1;">
           “And God is able to make all grace abound toward me; that I, always having all sufficiency in all things, may have an abundance for every good work.”
@@ -77,7 +75,7 @@ function formatTime(t) { const [h, m] = t.split(':').map(Number); return `${h % 
   <section class="section-tight">
     <div class="container">
       <div class="bento reveal">
-        <!-- FIXED THE TEXT HERE -->
+        <!-- FIXED TEXT -->
         <div class="card card-hover card-feature bento-wide">
           <div>
             <div class="eyebrow">Our Family</div>
