@@ -2,17 +2,17 @@
 const path = Astro.url.pathname;
 const tabs = [
   { href: '/', label: 'Home', icon: 'home' },
+  { href: '/about/', label: 'About', icon: 'info' },
   { href: '/ministries/', label: 'Ministries', icon: 'grid' },
   { href: '/watch/', label: 'Watch', icon: 'play' },
   { href: '/give/', label: 'Give', icon: 'heart' },
-  { href: '/connect/', label: 'Connect', icon: 'chat' },
 ];
 const icons = {
   home: '<path d="M3 9.5L12 3l9 6.5V20a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1V9.5z"/>',
+  info: '<circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/>',
   grid: '<rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/>',
   play: '<polygon points="6 4 20 12 6 20 6 4"/>',
   heart: '<path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/>',
-  chat: '<path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10z"/>',
 };
 const isActive = (href: string) => href === '/' ? path === '/' : path.startsWith(href);
 ---

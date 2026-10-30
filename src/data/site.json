@@ -20,7 +20,7 @@
   "services": [
     { "id": "tue", "day": "Tuesday", "short": "Tue", "name": "Home Bible Churches (HBC)", "time": "6:00 PM", "place": "Homes around Athi River", "icon": "book" },
     { "id": "wed", "day": "Wednesday", "short": "Wed", "name": "Bible Focus", "time": "6:00–8:00 PM", "place": "Main Sanctuary", "icon": "book" },
-    { "id": "thu", "day": "Thursday", "short": "Thu", "name": "Family Fellowship", "time": "6:00 PM", "place": "Main Sanctuary", "icon": "users" },
+    { "id": "thu", "day": "Thursday", "short": "Thu", "name": "Family Fellowship", "time": "6:00 PM", "place": "In homes", "icon": "users" },
     { "id": "fri", "day": "Friday", "short": "Fri", "name": "Overnight Prayers (Kesha)", "time": "10:00 PM–3:00 AM", "place": "Prayer Chamber", "icon": "pray" },
     { "id": "sun", "day": "Sunday", "short": "Sun", "name": "Sunday Services", "time": "7:00 AM–1:00 PM", "place": "Main Sanctuary", "icon": "sun" }
   ],

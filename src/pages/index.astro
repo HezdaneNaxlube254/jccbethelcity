@@ -24,9 +24,10 @@ function formatTime(t) { const [h, m] = t.split(':').map(Number); return `${h % 
 ---
 <Layout title="JCC Bethel City | Home of World Changers — Athi River" description="JCC Bethel City is a Spirit-filled church in Athi River, Kenya — home of world changers. Sunday services, Bible Focus, Overnight Prayers. Plan your visit today." path="/">
   <section class="hero reveal" id="hero-rotating">
+    <!-- Fixed image names to match the renamed files -->
     <div class="hero-slide active" style="position:absolute; inset:0; background-image:url('/images/hero-home.jpg'); background-size:cover; background-position:center; transition: opacity 1s;"></div>
-    <div class="hero-slide" style="position:absolute; inset:0; background-image:url('/images/fam1.jpg'); background-size:cover; background-position:center; opacity:0; transition: opacity 1s;"></div>
-    <div class="hero-slide" style="position:absolute; inset:0; background-image:url('/images/hero3.jpg'); background-size:cover; background-position:center; opacity:0; transition: opacity 1s;"></div>
+    <div class="hero-slide" style="position:absolute; inset:0; background-image:url('/images/hero-2.jpg'); background-size:cover; background-position:center; opacity:0; transition: opacity 1s;"></div>
+    <div class="hero-slide" style="position:absolute; inset:0; background-image:url('/images/hero-3.jpg'); background-size:cover; background-position:center; opacity:0; transition: opacity 1s;"></div>
     <div class="hero-bg" style="position:absolute; inset:0; background:linear-gradient(180deg, rgba(7,11,36,0.35) 0%, rgba(7,11,36,0.85) 100%); z-index:1;"></div>
     <div class="sunrise" aria-hidden="true"></div>
     <div class="hero-content">
@@ -43,13 +44,16 @@ function formatTime(t) { const [h, m] = t.split(':').map(Number); return `${h % 
     </div>
   </section>
 
-  <!-- Theme Verse -->
-  <section class="section-tight reveal" style="background: var(--navy); color: #fff; margin-top: var(--s-4);">
-    <div class="container" style="max-width: 820px; text-align: center;">
-      <p style="font-family: var(--font-display); font-size: 1.35rem; line-height: 1.6; color: #fff; margin: 0 0 var(--s-2);">
-        “And God is able to make all grace abound toward me; that I, always having all sufficiency in all things, may have an abundance for every good work.”
-      </p>
-      <p style="color: var(--gold); font-weight: 600; font-size: var(--fs-sm); letter-spacing: 0.1em; text-transform: uppercase; margin: 0;">2 Corinthians 9:8 (personalised)</p>
+  <!-- THE CONFESSION CARD (Beautifully styled) -->
+  <section class="section-tight reveal">
+    <div class="container">
+      <div class="card" style="background: linear-gradient(135deg, var(--surface), var(--surface-2)); border: 2px solid var(--gold); border-radius: var(--r-lg); padding: var(--s-4); text-align: center; box-shadow: var(--shadow);">
+        <div class="eyebrow" style="color: var(--orange); font-size: 0.85rem; letter-spacing: 0.2em;">Our Confession</div>
+        <p style="font-family: var(--font-display); font-size: 1.35rem; line-height: 1.6; color: var(--navy); margin: 0 0 var(--s-2); font-style: italic; max-width: 780px; margin-left: auto; margin-right: auto;">
+          “And God is able to make all grace abound toward me; that I, always having all sufficiency in all things, may have an abundance for every good work.”
+        </p>
+        <p style="color: var(--gold); font-weight: 700; font-size: var(--fs-sm); letter-spacing: 0.1em; margin: 0;">2 Corinthians 9:8</p>
+      </div>
     </div>
   </section>
 
@@ -71,8 +75,8 @@ function formatTime(t) { const [h, m] = t.split(':').map(Number); return `${h % 
       <div class="bento reveal">
         <div class="card card-hover card-feature bento-wide">
           <div>
-            <div class="eyebrow">Our confession</div>
-            <h3 style="margin:0;">Where everybody is somebody and Jesus is Lord.</h3>
+            <div class="eyebrow">Come as you are</div>
+            <h3 style="margin:0;">Casual clothes, real people, a living God.</h3>
           </div>
           <a href="/visit/" class="card-arrow">What to expect →</a>
         </div>
