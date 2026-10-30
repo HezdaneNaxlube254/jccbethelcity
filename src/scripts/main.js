@@ -1,5 +1,20 @@
 const REDUCED = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+/* ---------- Hero image rotation (home) ---------- */
+(() => {
+  const hero = document.getElementById('hero-rotating');
+  if (!hero || REDUCED) return;
+  const slides = hero.querySelectorAll('.hero-slide');
+  if (slides.length < 2) return;
+  let i = 0;
+  setInterval(() => {
+    slides[i].classList.remove('active');
+    i = (i + 1) % slides.length;
+    slides[i].classList.add('active');
+  }, 5000);
+})();
+
+/* ---------- Reveal on scroll ---------- */
 if (!REDUCED && 'IntersectionObserver' in window) {
   const io = new IntersectionObserver((entries) => entries.forEach((e) => {
     if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
@@ -10,13 +25,18 @@ if (!REDUCED && 'IntersectionObserver' in window) {
   });
 }
 
+/* ---------- Time-aware next service chip ---------- */
 (() => {
   const chip = document.querySelector('[data-status-chip]');
   if (!chip) return;
   const services = [
-    { day: 0, hour: 9, minute: 0, label: 'Sunday Celebration', time: '9:00 AM', durationMin: 180 },
-    { day: 3, hour: 18, minute: 0, label: 'Life Class', time: '6:00 PM', durationMin: 120 },
-    { day: 5, hour: 18, minute: 30, label: 'Prayer Night', time: '6:30 PM', durationMin: 120 },
+    { day: 2, hour: 18, minute: 0, label: 'Home Bible Churches', time: '6:00 PM', durationMin: 120 },
+    { day: 3, hour: 18, minute: 0, label: 'Bible Focus', time: '6:00 PM', durationMin: 120 },
+    { day: 4, hour: 18, minute: 0, label: 'Family Fellowship', time: '6:00 PM', durationMin: 120 },
+    { day: 5, hour: 22, minute: 0, label: 'Overnight Prayers', time: '10:00 PM', durationMin: 300 },
+    { day: 0, hour: 7, minute: 0, label: 'Sunday Prayers', time: '7:00 AM', durationMin: 60 },
+    { day: 0, hour: 8, minute: 0, label: 'First Service', time: '8:00 AM', durationMin: 120 },
+    { day: 0, hour: 10, minute: 0, label: 'Main Service', time: '10:00 AM', durationMin: 180 },
   ];
   function nairobiNow() { return new Date(new Date().toLocaleString('en-US', { timeZone: 'Africa/Nairobi' })); }
   function update() {
@@ -58,6 +78,7 @@ if (!REDUCED && 'IntersectionObserver' in window) {
   setInterval(update, 60000);
 })();
 
+/* ---------- Copy-to-clipboard ---------- */
 document.addEventListener('click', (e) => {
   const btn = e.target.closest('[data-copy]');
   if (!btn) return;
@@ -75,6 +96,7 @@ document.addEventListener('click', (e) => {
   });
 });
 
+/* ---------- Ministry drawer ---------- */
 (() => {
   const drawer = document.getElementById('drawer');
   const backdrop = document.getElementById('drawer-backdrop');
@@ -115,6 +137,7 @@ document.addEventListener('click', (e) => {
   });
 })();
 
+/* ---------- Lite YouTube ---------- */
 document.addEventListener('click', (e) => {
   const trigger = e.target.closest('[data-yt]');
   if (!trigger) return;
@@ -131,6 +154,7 @@ document.addEventListener('click', (e) => {
   wrap.innerHTML = ''; wrap.appendChild(iframe);
 });
 
+/* ---------- Forms ---------- */
 document.addEventListener('submit', async (e) => {
   const form = e.target.closest('form[data-form]');
   if (!form) return;
@@ -164,6 +188,7 @@ document.addEventListener('submit', async (e) => {
   } finally { btn.disabled = false; btn.textContent = orig; }
 });
 
+/* ---------- Filters ---------- */
 document.addEventListener('click', (e) => {
   const chip = e.target.closest('[data-filter]');
   if (!chip) return;
@@ -180,6 +205,7 @@ document.addEventListener('click', (e) => {
   });
 });
 
+/* ---------- Tabs (connect) ---------- */
 document.addEventListener('click', (e) => {
   const tab = e.target.closest('[data-tab]');
   if (!tab) return;

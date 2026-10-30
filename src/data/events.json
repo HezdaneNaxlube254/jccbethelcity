@@ -1,40 +1,28 @@
 {
   "events": [
     {
-      "id": "sample-prayer-night",
-      "title": "Community Prayer Night",
-      "date": "2026-02-27",
-      "time": "18:30",
-      "endTime": "20:30",
-      "location": "JCC Bethel City, Athi River",
-      "category": "Prayer",
-      "description": "SAMPLE EVENT - replace with real event. An evening of worship and intercession for Athi River.",
-      "image": "/images/event-prayer-night.jpg",
-      "sample": true
+      "id": "youth-ablaze-2026",
+      "title": "Annual Youth Ablaze Conference",
+      "date": "2026-11-13",
+      "time": "09:00",
+      "endTime": "17:00",
+      "location": "Maturity Centre, Machakos",
+      "category": "Youth",
+      "description": "A gathering of young people from across the region for worship, the Word, and impartation. Come expectant.",
+      "image": "/images/ministry-youth.jpg",
+      "sample": false
     },
     {
-      "id": "sample-womens-gathering",
-      "title": "Women's Ministry Gathering",
-      "date": "2026-03-14",
-      "time": "14:00",
-      "endTime": "16:00",
-      "location": "JCC Bethel City, Athi River",
-      "category": "Women",
-      "description": "SAMPLE EVENT - replace with real event. Monthly gathering for women to worship, pray, and grow together.",
-      "image": "/images/ministry-women.jpg",
-      "sample": true
-    },
-    {
-      "id": "sample-outreach",
-      "title": "Community Outreach Day",
-      "date": "2026-03-21",
-      "time": "08:00",
-      "endTime": "13:00",
-      "location": "Meet at church",
-      "category": "Outreach",
-      "description": "SAMPLE EVENT - replace with real event. Serving families in Athi River with practical love.",
-      "image": "/images/event-outreach.jpg",
-      "sample": true
+      "id": "word-explosion-2026",
+      "title": "Word Explosion",
+      "date": "2026-12-04",
+      "time": "09:00",
+      "endTime": "17:00",
+      "location": "JCC Mombasa",
+      "category": "Conference",
+      "description": "The annual Word Explosion conference with Pastor Wilfred Lai and the JCC family in Mombasa. A time of deep teaching and impartation.",
+      "image": "/images/church.jpg",
+      "sample": false
     }
   ]
 }

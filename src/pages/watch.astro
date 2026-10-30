@@ -1,11 +1,14 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import sermons from '../data/sermons.json';
-import site from '../data/site.json';
-const all = sermons.sermons;
-const speakers = [...new Set(all.map((s) => s.speaker))];
-const seriesList = [...new Set(all.map((s) => s.series).filter(Boolean))];
-const latest = all[0];
+const videos = [
+  { id: 'CxQurstuLpU', title: 'The Power of Believing', speaker: 'Pst. Rodgers Silali', series: null, img: '/images/sermon-latest.jpg' },
+  { id: 'JcQcazyIfPU', title: 'The Anointing Series', speaker: 'Pst. Rodgers Silali', series: 'The Anointing', img: '/images/rodger1.jpg' },
+  { id: 'MMvr4xraImY', title: 'Taking a Stand', speaker: 'Pst. Rodgers Silali', series: 'Taking a Stand', img: '/images/rodger3.jpg' },
+  { id: '0-_qzFu79EQ', title: 'The Zeal of God', speaker: 'Pst. Rodgers Silali', series: 'The Zeal of God', img: '/images/rodger4.jpg' },
+  { id: 'TTFzBsThoXY', title: 'The Three Anointings', speaker: 'Pst. Rodgers Silali', series: null, img: '/images/rodger5.jpg' },
+  { id: 'pKytpnoNLbk', title: 'Out of the Eater Came Forth Meat', speaker: 'Pst. Rodgers Silali', series: null, img: '/images/rodger12.jpg' },
+  { id: 'CxQurstuLpU', title: 'Sunday Celebration', speaker: 'JCC Bethel City', series: null, img: '/images/church.jpg' },
+];
 ---
 <Layout title="Watch | JCC Bethel City, Athi River" description="Watch the latest message and browse past sermons from JCC Bethel City in Athi River. Live on Sundays." path="/watch/">
   <section class="section">
@@ -18,14 +21,14 @@ const latest = all[0];
 
       <div class="reveal" data-yt-wrap style="position:relative; aspect-ratio: 16/9; background: var(--navy); border-radius: var(--r-lg); overflow:hidden; cursor:pointer; max-width: 900px; margin: 0 auto; box-shadow: var(--shadow);">
         <img src="/images/sermon-latest.jpg" alt="" width="1280" height="720" loading="eager" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:0.75;" />
-        <button type="button" data-yt={latest.videoId} aria-label="Play latest message" style="position:absolute; inset:0; background:none; border:none; display:grid; place-items:center; cursor:pointer;">
+        <button type="button" data-yt={videos[0].id} aria-label="Play latest message" style="position:absolute; inset:0; background:none; border:none; display:grid; place-items:center; cursor:pointer;">
           <span style="width: 96px; height: 96px; border-radius:50%; background: var(--gold); display:grid; place-items:center; box-shadow: 0 8px 32px rgba(0,0,0,0.4);">
             <svg viewBox="0 0 24 24" fill="var(--navy)" width="38" height="38"><polygon points="8 5 20 12 8 19 8 5"/></svg>
           </span>
         </button>
         <div style="position:absolute; left:20px; bottom:20px; right:20px; color:#fff; text-shadow: 0 1px 8px rgba(0,0,0,0.6);">
-          <div style="font-weight:700; font-size:1.15rem;">{latest.title}</div>
-          <div style="font-size:0.85rem; opacity:0.85;">{latest.speaker}</div>
+          <div style="font-weight:700; font-size:1.15rem;">{videos[0].title}</div>
+          <div style="font-size:0.85rem; opacity:0.85;">{videos[0].speaker}</div>
         </div>
       </div>
     </div>
@@ -33,30 +36,23 @@ const latest = all[0];
 
   <section class="section-tight">
     <div class="container">
-      <div data-filter-group data-filter-target="sermon">
-        <h2 class="reveal">All messages</h2>
-        <div class="chips reveal" style="margin-top: var(--s-2);">
-          <button class="chip" data-filter="all" aria-pressed="true">All</button>
-          {speakers.map((sp) => (<button class="chip" data-filter={sp} aria-pressed="false">{sp}</button>))}
-          {seriesList.map((se) => (<button class="chip" data-filter={se} aria-pressed="false">{se}</button>))}
-        </div>
-        <div style="display:grid; gap: var(--s-2); grid-template-columns: 1fr; margin-top: var(--s-3);">
-          {all.map((s) => (
-            <a href={site.social.youtube} target="_blank" rel="noopener" class="card card-hover" data-filter-item="sermon" data-tags={`${s.speaker},${s.series ?? ''}`} style="display:flex; gap: var(--s-2); padding: var(--s-2);">
-              <div style="width: 160px; aspect-ratio: 16/9; background: var(--navy); border-radius: var(--r-sm); flex-shrink:0; overflow:hidden; position:relative;">
-                <img src="/images/sermon-latest.jpg" alt="" width="320" height="180" loading="lazy" style="width:100%; height:100%; object-fit:cover; opacity:0.7;" />
-                <div style="position:absolute; inset:0; display:grid; place-items:center;"><svg viewBox="0 0 24 24" fill="var(--gold)" width="30" height="30"><polygon points="8 5 20 12 8 19 8 5"/></svg></div>
-              </div>
-              <div style="flex:1; min-width:0;">
-                <div style="font-weight:700; color: var(--navy);">{s.title}</div>
-                <div style="font-size: var(--fs-xs); color: var(--text-muted);">{s.speaker} · {s.scripture}</div>
-                {s.series && <div style="font-size: var(--fs-xs); color: var(--orange); font-weight:600; margin-top:4px;">{s.series}</div>}
-              </div>
-            </a>
-          ))}
-        </div>
-        <p class="text-muted" style="font-size: var(--fs-xs); margin-top: var(--s-2); text-align:center;">More sermons appear here as they are published. Update <code>src/data/sermons.json</code> to add them.</p>
+      <h2 class="reveal">All messages</h2>
+      <div style="display:grid; gap: var(--s-2); grid-template-columns: 1fr; margin-top: var(--s-3);">
+        {videos.map((s) => (
+          <a href={`https://youtu.be/${s.id}`} target="_blank" rel="noopener" class="card card-hover" style="display:flex; gap: var(--s-2); padding: var(--s-2);">
+            <div style="width: 160px; aspect-ratio: 16/9; background: var(--navy); border-radius: var(--r-sm); flex-shrink:0; overflow:hidden; position:relative;">
+              <img src={s.img} alt="" width="320" height="180" loading="lazy" style="width:100%; height:100%; object-fit:cover; opacity:0.7;" />
+              <div style="position:absolute; inset:0; display:grid; place-items:center;"><svg viewBox="0 0 24 24" fill="var(--gold)" width="30" height="30"><polygon points="8 5 20 12 8 19 8 5"/></svg></div>
+            </div>
+            <div style="flex:1; min-width:0;">
+              <div style="font-weight:700; color: var(--navy);">{s.title}</div>
+              <div style="font-size: var(--fs-xs); color: var(--text-muted);">{s.speaker}</div>
+              {s.series && <div style="font-size: var(--fs-xs); color: var(--orange); font-weight:600; margin-top:4px;">{s.series}</div>}
+            </div>
+          </a>
+        ))}
       </div>
+      <p class="text-muted" style="font-size: var(--fs-xs); margin-top: var(--s-3); text-align:center;">More sermons appear here as they are published.</p>
     </div>
   </section>
 </Layout>

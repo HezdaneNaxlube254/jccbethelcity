@@ -8,9 +8,9 @@
     "co": "Pastor Jacklyn Mucholwa-Silali"
   },
   "contact": {
-    "phone": "+254 796 316 316",
-    "phoneRaw": "+254796316316",
-    "whatsapp": "https://wa.me/254796316316",
+    "phone": "+254 724 273 852",
+    "phoneRaw": "+254724273852",
+    "whatsapp": "https://wa.me/254724273852",
     "email": "info@jccbethelcity.org",
     "address": "TODO_CONFIRM: full street address",
     "plusCode": "H292+C98 Athi River",
@@ -18,9 +18,11 @@
     "mapEmbed": "https://www.google.com/maps?q=H292%2BC98+Athi+River&output=embed"
   },
   "services": [
-    { "id": "sun", "day": "Sunday", "short": "Sun", "name": "Sunday Celebration", "time": "9:00 AM", "place": "Main Sanctuary", "icon": "sun" },
-    { "id": "wed", "day": "Wednesday", "short": "Wed", "name": "Life Class", "time": "6:00 PM", "place": "Main Sanctuary", "icon": "book" },
-    { "id": "fri", "day": "Friday", "short": "Fri", "name": "Prayer Night", "time": "6:30 PM", "place": "Prayer Chamber", "icon": "pray" }
+    { "id": "tue", "day": "Tuesday", "short": "Tue", "name": "Home Bible Churches (HBC)", "time": "6:00 PM", "place": "Homes around Athi River", "icon": "book" },
+    { "id": "wed", "day": "Wednesday", "short": "Wed", "name": "Bible Focus", "time": "6:00–8:00 PM", "place": "Main Sanctuary", "icon": "book" },
+    { "id": "thu", "day": "Thursday", "short": "Thu", "name": "Family Fellowship", "time": "6:00 PM", "place": "Main Sanctuary", "icon": "users" },
+    { "id": "fri", "day": "Friday", "short": "Fri", "name": "Overnight Prayers (Kesha)", "time": "10:00 PM–3:00 AM", "place": "Prayer Chamber", "icon": "pray" },
+    { "id": "sun", "day": "Sunday", "short": "Sun", "name": "Sunday Services", "time": "7:00 AM–1:00 PM", "place": "Main Sanctuary", "icon": "sun" }
   ],
   "giving": {
     "paybill": "5060995",
@@ -33,7 +35,74 @@
     "youtubeVideoId": "CxQurstuLpU",
     "youtubeChannelId": "TODO_CONFIRM: YouTube channel ID"
   },
-  "history": { "founded": 2014, "firstSanctuary": 2016, "ministriesLaunched": 2019 },
+  "history": { "founded": 2010, "firstSanctuary": 2012, "ministriesLaunched": 2019 },
+  "network": {
+    "name": "Jesus Celebration Centre (JCC)",
+    "url": "https://www.jccmombasa.org/",
+    "pillars": [
+      { "title": "Faith", "verse": "Hebrews 11:1", "text": "Now faith is confidence in what we hope for and assurance about what we do not see." },
+      { "title": "Prayer", "verse": "Philippians 4:6–7", "text": "Do not be anxious about anything, but in every situation, by prayer and petition, with thanksgiving, present your requests to God..." },
+      { "title": "Fellowship", "verse": "Hebrews 10:24–25", "text": "And let us consider how we may spur one another on toward love and good deeds, not giving up meeting together... but encouraging one another..." },
+      { "title": "Giving", "verse": "Luke 6:38", "text": "Give, and it will be given to you. A good measure, pressed down, shaken together and running over, will be poured into your lap." },
+      { "title": "The Word", "verse": "Hebrews 4:12", "text": "For the word of God is alive and active..." }
+    ]
+  },
+  "forms": {
+    "web3formsKey": "TODO_CONFIRM: web3forms access key",
+    "formspreeEndpoint": ""
+  },
+  "analytics": { "plausibleDomain": "" }
+}
+JCC_ENDcat > src/data/site.json << 'JCC_END'
+{
+  "name": "JCC Bethel City",
+  "network": "Jesus Celebration Centre",
+  "tagline": "Where Heaven Meets Athi River",
+  "tagline2": "Where everybody is somebody & Jesus is Lord",
+  "pastors": {
+    "senior": "Pst. Rodgers Silali",
+    "co": "Pastor Jacklyn Mucholwa-Silali"
+  },
+  "contact": {
+    "phone": "+254 724 273 852",
+    "phoneRaw": "+254724273852",
+    "whatsapp": "https://wa.me/254724273852",
+    "email": "info@jccbethelcity.org",
+    "address": "TODO_CONFIRM: full street address",
+    "plusCode": "H292+C98 Athi River",
+    "directions": "https://www.google.com/maps/dir/?api=1&destination=H292%2BC98+Athi+River",
+    "mapEmbed": "https://www.google.com/maps?q=H292%2BC98+Athi+River&output=embed"
+  },
+  "services": [
+    { "id": "tue", "day": "Tuesday", "short": "Tue", "name": "Home Bible Churches (HBC)", "time": "6:00 PM", "place": "Homes around Athi River", "icon": "book" },
+    { "id": "wed", "day": "Wednesday", "short": "Wed", "name": "Bible Focus", "time": "6:00–8:00 PM", "place": "Main Sanctuary", "icon": "book" },
+    { "id": "thu", "day": "Thursday", "short": "Thu", "name": "Family Fellowship", "time": "6:00 PM", "place": "Main Sanctuary", "icon": "users" },
+    { "id": "fri", "day": "Friday", "short": "Fri", "name": "Overnight Prayers (Kesha)", "time": "10:00 PM–3:00 AM", "place": "Prayer Chamber", "icon": "pray" },
+    { "id": "sun", "day": "Sunday", "short": "Sun", "name": "Sunday Services", "time": "7:00 AM–1:00 PM", "place": "Main Sanctuary", "icon": "sun" }
+  ],
+  "giving": {
+    "paybill": "5060995",
+    "account": "Reason for Giving",
+    "reasons": ["Tithe", "Offering", "Building Fund", "Missions", "Welfare", "Other"]
+  },
+  "social": {
+    "facebook": "https://web.facebook.com/jcc.gimuchurch/photos",
+    "youtube": "https://youtu.be/CxQurstuLpU?si=r0jp8qR0bsRZ-5WW",
+    "youtubeVideoId": "CxQurstuLpU",
+    "youtubeChannelId": "TODO_CONFIRM: YouTube channel ID"
+  },
+  "history": { "founded": 2010, "firstSanctuary": 2012, "ministriesLaunched": 2019 },
+  "network": {
+    "name": "Jesus Celebration Centre (JCC)",
+    "url": "https://www.jccmombasa.org/",
+    "pillars": [
+      { "title": "Faith", "verse": "Hebrews 11:1", "text": "Now faith is confidence in what we hope for and assurance about what we do not see." },
+      { "title": "Prayer", "verse": "Philippians 4:6–7", "text": "Do not be anxious about anything, but in every situation, by prayer and petition, with thanksgiving, present your requests to God..." },
+      { "title": "Fellowship", "verse": "Hebrews 10:24–25", "text": "And let us consider how we may spur one another on toward love and good deeds, not giving up meeting together... but encouraging one another..." },
+      { "title": "Giving", "verse": "Luke 6:38", "text": "Give, and it will be given to you. A good measure, pressed down, shaken together and running over, will be poured into your lap." },
+      { "title": "The Word", "verse": "Hebrews 4:12", "text": "For the word of God is alive and active..." }
+    ]
+  },
   "forms": {
     "web3formsKey": "TODO_CONFIRM: web3forms access key",
     "formspreeEndpoint": ""
