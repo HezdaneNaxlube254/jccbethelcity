@@ -6,12 +6,12 @@ import '../styles/global.css';
 import site from '../data/site.json';
 
 interface Props { title: string; description: string; path: string; ogImage?: string; }
-const { title, description, path, ogImage = '/images/hero1.jpg' } = Astro.props;
+const { title, description, path, ogImage = '/images/hero-home.jpg' } = Astro.props;
 const canonical = new URL(path, Astro.site ?? 'https://jccbethelcity.org').toString();
 
 const jsonLd = {
   '@context': 'https://schema.org', '@type': 'Church',
-  name: site.name, alternateName: site.network, url: canonical,
+  name: site.name, alternateName: site.networkName, url: canonical,
   logo: new URL('/images/logo.png', Astro.site).toString(),
   image: new URL(ogImage, Astro.site).toString(),
   telephone: site.contact.phone, email: site.contact.email,
@@ -19,9 +19,11 @@ const jsonLd = {
   address: { '@type': 'PostalAddress', addressLocality: 'Athi River', addressCountry: 'KE', addressRegion: 'Machakos', streetAddress: 'Athi River' },
   geo: { '@type': 'GeoCoordinates', latitude: -1.4515, longitude: 36.9785 },
   openingHoursSpecification: [
-    { '@type': 'OpeningHoursSpecification', dayOfWeek: 'Sunday', opens: '09:00', closes: '12:00' },
+    { '@type': 'OpeningHoursSpecification', dayOfWeek: 'Tuesday', opens: '18:00', closes: '20:00' },
     { '@type': 'OpeningHoursSpecification', dayOfWeek: 'Wednesday', opens: '18:00', closes: '20:00' },
-    { '@type': 'OpeningHoursSpecification', dayOfWeek: 'Friday', opens: '18:30', closes: '20:30' },
+    { '@type': 'OpeningHoursSpecification', dayOfWeek: 'Thursday', opens: '18:00', closes: '20:00' },
+    { '@type': 'OpeningHoursSpecification', dayOfWeek: 'Friday', opens: '22:00', closes: '03:00' },
+    { '@type': 'OpeningHoursSpecification', dayOfWeek: 'Sunday', opens: '07:00', closes: '13:00' },
   ],
 };
 ---
@@ -49,7 +51,7 @@ const jsonLd = {
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700;9..144,800&family=Inter:wght@400;500;600;700&display=swap" />
-    <link rel="preload" as="image" href="/images/hero1.jpg" fetchpriority="high" />
+    <link rel="preload" as="image" href="/images/hero-home.jpg" fetchpriority="high" />
     <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
     <noscript>
       <style>
